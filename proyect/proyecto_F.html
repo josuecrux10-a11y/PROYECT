@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/Stl.css">
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<title>Portal Escolar</title>
+</head>
+
+<body>
+
+<div class="wrapper" id="inicio">
+<div class="container">
+
+<h2>🎓 Portal Escolar</h2>
+
+<button onclick="mostrarRegistro()">📝 Registrarse</button>
+<button onclick="mostrarLogin()">🔐 Ingresar</button>
+
+<div id="registro" style="display:none;">
+<div id="contenedorTituloDocente" style="display:none; gap:5px;">
+    
+    <select id="tituloDocente" style="width:90px;">
+        <option value="Lic.">Lic.</option>
+        <option value="MSc.">MSc.</option>
+        <option value="Abg.">Abg.</option>
+        <option value="Ing.">Ing.</option>
+        <option value="Dr.">Dr.</option>
+        <option value="PhD.">PhD.</option>
+    </select>
+
+    <input
+        id="regNombre"
+        placeholder="Nombre y apellido"
+        maxlength="40"
+        style="flex:1;"
+    >
+
+</div>
+
+<input
+    id="regNombreSolo"
+    placeholder="Nombre y apellido"
+    maxlength="40"
+>
+<input id="regPass" type="password" placeholder="Clave" maxlength="20">
+
+<select id="regRol" onchange="cambiarRolRegistro()">
+<option value="">Seleccione un rol</option>
+<option value="alumno">👤 Alumno</option>
+<option value="docente">👨‍🏫 Docente</option>
+<option value="rector">👨‍💼 Rectoría</option>
+</select>
+<select id="cursoAlumno" style="display:none;">
+    <option value="">Seleccione curso</option>
+    <option value="8">8° EGB</option>
+    <option value="9">9° EGB</option>
+    <option value="10">10° EGB</option>
+    <option value="1BGU">1° BGU</option>
+    <option value="2BGU">2° BGU</option>
+    <option value="3BGU">3° BGU</option>
+</select>
+<select id="especialidadAlumno" style="display:none;">
+    <option value="">Seleccione especialidad</option>
+    <option value="Ciencias">Ciencias</option>
+    <option value="Computacion">Computación</option>
+    <option value="Contabilidad">Contabilidad</option>
+</select>
+
+</select>
+    <div id="materiasDocente" style="display:none; margin-top:15px; text-align:left;">
+
+<p style="font-weight:bold; margin-bottom:10px;">📚 Materias que puede impartir:</p>
+
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Matemática" style="width:auto; transform:scale(1.1);"> Matemática</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Inglés" style="width:auto; transform:scale(1.1);"> Inglés</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Ciudadanía" style="width:auto; transform:scale(1.1);"> Ciudadanía</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Química" style="width:auto; transform:scale(1.1);"> Química</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Emprendimiento" style="width:auto; transform:scale(1.1);"> Emprendimiento</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Lengua y Literatura" style="width:auto; transform:scale(1.1);"> Lengua y Literatura</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Biología" style="width:auto; transform:scale(1.1);"> Biología</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Historia" style="width:auto; transform:scale(1.1);"> Historia</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Educación Física" style="width:auto; transform:scale(1.1);"> Educación Física</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Tutoría" style="width:auto; transform:scale(1.1);"> Tutoría</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Proyecto" style="width:auto; transform:scale(1.1);"> Proyecto</label><br>
+<label style="display:flex; align-items:center; justify-content:flex-start; gap:8px; direction:rtl;"><input type="checkbox" value="Computación" style="width:auto; transform:scale(1.1);"> Computación</label>
+
+</div>
+
+<input type="password" id="claveRector" placeholder="🔑 Clave especial rector" style="display:none;">
+
+<button onclick="registrar()">✅ Guardar Registro</button>
+
+</div>
+
+<div id="formLogin" style="display:none;">
+<input id="logNombre" placeholder="Nombre y apellido">
+<input id="logPass" type="password" placeholder="Clave">
+<button onclick="login()">🚀 Entrar al Portal</button>
+</div>
+
+<p id="mensaje"></p>
+
+</div>
+</div>
+
+</div>
+
+<div id="panelAlumno" style="display:none;">
+
+<div class="header">
+    <span id="usuarioActivo">👤 Alumno</span>
+    <span id="fechaHoraAlumno"></span>
+    <button class="btn-cerrar" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+</div>
+
+<div class="cards">
+<div class="card" onclick="mostrarSeccion('perfil')">👤 Mi Perfil</div>
+<div class="card" onclick="mostrarSeccion('materias')">📚 Mis Materias</div>
+<div class="card" onclick="mostrarSeccion('notas')">📝 Mis Notas</div>
+<div class="card" onclick="mostrarSeccion('conducta')">⭐ Mi Conducta</div>
+<div class="card" onclick="mostrarSeccion('horario')">🕒 Mi Horario</div>
+<div class="card" onclick="mostrarSeccion('foroAlumno')">💬 Foro Estudiantil</div>
+<div class="card" onclick="mostrarSeccion('quizzizAlumno')">🎮 Quizziz</div>
+</div>
+
+<div id="perfil" class="seccion">
+    <div class="ficha">
+        <div class="ficha-header">
+<input type="file" id="fotoInput" accept="image/*">
+<img id="fotoPerfil" src="https://cdn-icons-png.flaticon.com/512/6326/6326055.png" alt="Foto de perfil" onclick="document.getElementById('fotoInput').click()">
+<h2 id="nombreVista">Nombre del estudiante</h2>
+</div>
+
+<div class="bloque">
+<h3>📘 Datos Personales</h3>
+<div class="grid">
+<input id="nombre" placeholder="Nombre completo">
+<input id="cedula" placeholder="Cédula" maxlength="13">
+<input id="nacimiento" type="date">
+<input id="ciudad" placeholder="Ciudad">
+
+<input
+    id="curso"
+    type="text"
+    placeholder="Curso"
+    readonly
+>
+
+<input
+    id="paralelo"
+    type="text"
+    placeholder="Pendiente de asignación por Rectoría"
+    readonly
+>
+
+<input
+    id="especialidad"
+    type="text"
+    placeholder="Especialidad"
+    readonly
+>
+
+</div>
+</div>
+
+<div class="bloque">
+<h3>👨‍👩‍👧 Contacto Padres</h3>
+<div class="grid">
+<input id="madre" placeholder="Nombre de la madre">
+<input id="padre" placeholder="Nombre del padre">
+<input id="telPadres" placeholder="Teléfono padres" type="tel">
+</div>
+</div>
+
+<div class="bloque">
+<h3>🚑 Contacto Emergencia</h3>
+<div class="grid">
+<input id="emergenciaNombre" placeholder="Nombre contacto">
+<input id="emergenciaTel" placeholder="Teléfono" type="tel">
+<input id="emergenciaRel" placeholder="Relación">
+</div>
+</div>
+
+<button onclick="guardarPerfil()">💾 Guardar Perfil Completo</button>
+</div>
+</div>
+
+<div id="materias" class="seccion">
+    <div class="caja">
+        <h2>📚 Mis Materias</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th>Docente Responsable</th>
+                </tr>
+            </thead>
+            <tbody id="tablaMateriasAlumno"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="notas" class="seccion">
+    <div class="caja">
+        <h2>📝 Mis Notas</h2>
+        <table id="tablaNotas">
+            <tr>
+                <th>Materia</th>
+                <th>P1</th>
+                <th>P2</th>
+                <th>Examen</th>
+                <th>Promedio</th>
+                <th>Estado</th>
+            </tr>
+            <tr><td>Matemáticas</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Inglés</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Ciudadanía</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Química</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Emprendimiento</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Lengua y Literatura</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Historia</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Biología</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Educación Física</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Computación</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Tutoría</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Proyecto</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        </table>
+    </div>
+</div>
+
+<div id="conducta" class="seccion">
+    <div class="conducta-container">
+        <h2 class="conducta-title">⭐ Mi Evaluación de Conducta</h2>
+
+        <div class="conducta-leyenda">
+            <h3 style="margin-bottom:20px; font-size:24px;">📋 ¿Qué significa cada calificación?</h3>
+
+            <div class="leyenda-grid">
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-E">E</div>
+                    <strong>Excelente</strong><br>
+                    <small>Ejemplar en comportamiento</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-AA">AA</div>
+                    <strong>Actitud Aplicada</strong><br>
+                    <small>Excelente disposición</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-A">A</div>
+                    <strong>Adecuada</strong><br>
+                    <small>Cumple las normas</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-R">R</div>
+                    <strong>Regular</strong><br>
+                    <small>Necesita mejorar</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-D">D</div>
+                    <strong>Deficiente</strong><br>
+                    <small>Dificultades constantes</small>
+                </div>
+            </div>
+        </div>
+
+        <table class="table-conducta-alumno">
+            <thead>
+                <tr>
+                    <th>📚 Materia</th>
+                    <th>⭐ Conducta</th>
+                    <th>📅 Fecha</th>
+                    <th>👨‍🏫 Docente</th>
+                    <th>💬 Observación</th>
+                </tr>
+            </thead>
+            <tbody id="tablaConductaAlumno"></tbody>
+        </table>
+
+        <div id="sinConducta" class="sin-conducta">
+            📭 No hay evaluaciones de conducta registradas aún.<br>
+            <strong>Tus docentes aún no han calificado tu conducta este período.</strong>
+        </div>
+    </div>
+</div>
+
+<div id="horario" class="seccion">
+    <div class="caja">
+        <h2>🕒 Mi Horario de Clases</h2>
+
+        <table class="tabla-horario">
+            <tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr>
+            <tr><td>06:40 - 07:00</td><td colspan="5" style="background:linear-gradient(135deg,#39e2a2,#27ae60); color:black; font-weight:bold;">🎒 INGRESO</td></tr>
+            <tr><td>07:00 - 07:45</td><td>Matemáticas</td><td>Lengua y Literatura</td><td>Química</td><td>Historia</td><td>Computación</td></tr>
+            <tr><td>07:45 - 08:30</td><td>Lengua y Literatura</td><td>Matemáticas</td><td>Inglés</td><td>Biología</td><td>Historia</td></tr>
+            <tr><td>08:30 - 09:15</td><td>Biología</td><td>Inglés</td><td>Lengua y Literatura</td><td>Matemáticas</td><td>Educación Física</td></tr>
+            <tr><td>09:15 - 10:00</td><td>Historia</td><td>Biología</td><td>Matemáticas</td><td>Lengua y Literatura</td><td>Inglés</td></tr>
+            <tr><td>10:00 - 10:30</td><td colspan="5" class="receso">🍎 RECESO</td></tr>
+            <tr><td>10:30 - 11:15</td><td>Inglés</td><td>Computación</td><td>Historia</td><td>Educación Física</td><td>Matemáticas</td></tr>
+            <tr><td>11:15 - 12:00</td><td>Computación</td><td>Ciudadanía</td><td>Educación Física</td><td>Computación</td><td>Biología</td></tr>
+            <tr><td>12:00 - 12:30</td><td>Física</td><td>Lengua y Literatura</td><td>Química</td><td>Historia</td><td>Inglés</td></tr>
+            <tr><td>12:30 - 13:00</td><td>Refuerzo</td><td>Proyecto</td><td>Lectura</td><td>Tutoría</td><td>Actividad</td></tr>
+            <tr><td>13:00</td><td colspan="5" style="background:linear-gradient(135deg,#39e2a2,#27ae60); color:black; font-weight:bold;">🏠 SALIDA</td></tr>
+        </table>
+    </div>
+</div>
+<!-- ============================================ -->
+<!-- SECCIÓN QUIZZIZ - ALUMNO                     -->
+<!-- ============================================ -->
+<div id="quizzizAlumno" class="seccion" style="display:none;">
+    <div class="caja">
+        <h2>🎮 Bienvenido a Quizziz Games</h2>
+        <p style="color:#666; text-align:center; margin-bottom:25px;">
+            Responde los cuestionarios creados por tus docentes
+        </p>
+        
+        <div id="listaQuizzizAlumno" class="quizziz-container">
+            <!-- Los quizziz se cargarán aquí dinámicamente -->
+        </div>
+    </div>
+</div>
+
+<div id="foroAlumno" class="seccion">
+    <div class="caja">
+        <h2>💬 Foro Estudiantil</h2>
+        <p style="color:#666; font-style:italic; text-align:center;">Comparte tus Opiniones con tu Docente.</p>
+
+        <h3>📌 Preguntas Recientes</h3>
+        <div id="contenedorForoAlumno" class="foro-container"></div>
+    </div>
+</div>
+
+<div id="perfilDocenteAlumno"
+     class="seccion"
+     style="display:none;">
+
+    <div class="caja">
+
+        <!-- CABECERA DEL DOCENTE -->
+        <div class="cabecera-docente">
+
+            <img id="alumnoVistaFoto"
+                 class="foto-docente">
+
+            <div class="info-principal-docente">
+
+                <h1 id="alumnoVistaNombre"></h1>
+
+                <h3 class="cargo-docente">
+                    👨‍🏫 Docente de
+                    <span id="alumnoVistaMateria"></span>
+                </h3>
+
+                <p class="titulo-docente">
+                    🎓 <span id="alumnoVistaTitulo"></span>
+                </p>
+
+                <p class="experiencia-docente">
+                    🏆 <span id="alumnoVistaExperiencia"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="grid-docente">
+
+            <div class="info-card">
+                <h3>👤 Sobre mí</h3>
+                <p id="alumnoVistaPresentacion"></p>
+            </div>
+
+            <div class="info-card">
+                <h3>🎯 Frase Motivacional</h3>
+                <p id="alumnoVistaFrase"></p>
+            </div>
+
+        </div>
+
+        <div class="grid-docente">
+
+            <div class="info-card">
+            <h3>📞 Información de Contacto</h3>
+
+            <p>
+                <strong>Correo:</strong><br>
+                <span id="alumnoVistaCorreo"></span>
+            </p>
+
+            <p>
+                <strong>Teléfono:</strong><br>
+                <span id="alumnoVistaTelefono"></span>
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>🎓 Formación Académica</h3>
+
+            <p id="alumnoVistaFormacion"></p>
+        </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:30px;">
+
+            <button
+                class="btn-volver-docente"
+                onclick="mostrarSeccion('materias')">
+
+                ← Volver a Materias
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<div id="panelDocente" style="display:none;">
+    <div class="header">
+        <span id="docenteActivo">👨‍🏫 Docente</span>
+        <span id="fechaHoraDocente"></span>
+        <button class="btn-cerrar" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+    </div>
+
+    <div class="cards">
+        <div class="card" onclick="mostrarDocente('perfilD')">👤 Mi Perfil</div>
+        <div class="card" onclick="mostrarDocente('asistenciaD')">📋 Asistencia</div>
+        <div class="card" onclick="mostrarDocente('notasD')">📝 Calificar Notas</div>
+        <div class="card" onclick="mostrarDocente('conductaD')">⭐ Calificar Conducta</div>
+        <div class="card" onclick="mostrarDocente('foroDocente')">💬 Publicar Foro</div>
+        <div class="card" onclick="mostrarDocente('crearQuizziz')">📝 Crear Quizziz</div>
+        <div class="card" onclick="mostrarDocente('resultadosQuizziz')">📊 Resultados Quizziz</div>
+    </div>
+
+    <!-- PERFIL -->
+   <div id="perfilD" class="seccionDocente">
+
+    <div class="caja">
+
+        <h2>👨‍🏫 Perfil Docente</h2>
+
+        <div class="perfil-docente-header">
+
+            <label for="fotoDocente" class="avatar-docente">
+
+                <img id="fotoPreview"
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                alt="Foto Docente">
+
+            </label>
+
+            <input type="file"
+            id="fotoDocente"
+            accept="image/*"
+            style="display:none;">
+
+            <h3 id="nombreDocentePerfil">
+                Docente
+            </h3>
+
+        </div>
+        <div class="info-docente-auto">
+            
+             <div class="materia-docente-badge">
+            <span id="materiaDocentePerfil">
+            Materia no asignada
+            </span>
+        </div>
+        </div>
+        <div class="grid">
+            <input id="dTitulo" placeholder="Título profesional">
+            <input id="dCorreo" placeholder="Correo institucional">
+            <input id="dTelefono" placeholder="Teléfono">
+            <input id="dExperiencia" placeholder="Años de experiencia">
+            <input id="dFrase" placeholder="Frase motivacional">
+        </div>
+
+        <h3>🎓 Formación Académica</h3>
+        <textarea
+            id="dFormacion"
+            placeholder="Ejemplo: Licenciada en Ciencias de la Educación. Maestría en Pedagogía. Certificación en TIC aplicadas a la enseñanza."
+            style="width:100%;height:90px;margin-top:15px;">
+        </textarea>
+        <h3> Presentacion</h3>
+        <textarea
+            id="dPresentacion"
+            placeholder="Escribe una presentación para tus estudiantes..."
+            style="width:100%;height:120px;margin-top:15px;">
+        </textarea>
+
+        <div class="acciones-docente">
+
+    <button
+    type="button"
+    class="btn-guardar"
+    onclick="guardarDocente()">
+
+        💾 Guardar Perfil
+
+    </button>
+
+    <button
+        class="btn-editar"
+        onclick="editarPerfilDocente()">
+
+        ✏️ Editar
+
+    </button>
+
+</div>
+</div>
+</div>
+
+
+<!-- ASISTENCIA -->
+<div id="asistenciaD" class="seccionDocente" style="display:none;">
+
+    <div class="caja">
+
+        <h2>📋 Control de Asistencia</h2>
+
+        <hr style="margin:20px 0;">
+
+        <h3>📚 Cursos</h3>
+
+        <div
+            id="listaCursosAsistencia"
+            class="grid-asistencia">
+
+        </div>
+
+        <div
+            id="detalleAsistencia"
+            style="margin-top:20px; display:none;">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- NOTAS -->
+<div id="notasD" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>📝 Calificar Notas de Alumnos</h2>
+
+        <div class="buscar-alumnos">
+            <input type="text" id="buscarAlumnoNota" class="alumno-search" placeholder="🔍 Buscar alumno">
+            <button class="btn-buscar" onclick="buscarAlumnosNotas()">🔍 Buscar</button>
+        </div>
+
+        <div id="listaAlumnosNotas" class="alumnos-lista"></div>
+    </div>
+</div>
+
+<!-- CONDUCTA -->
+<div id="conductaD" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>⭐ Calificar Conducta</h2>
+
+        <div class="buscar-alumnos">
+            <input type="text" id="buscarAlumnoConducta" class="alumno-search" placeholder="🔍 Buscar alumno">
+            <button class="btn-buscar" onclick="buscarAlumnos()">🔍 Buscar</button>
+        </div>
+
+        <div id="listaAlumnosConducta" class="alumnos-lista"></div>
+    </div>
+</div>
+
+<!-- FORO -->
+<div id="foroDocente" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>💬 Foro Docente</h2>
+
+        <div style="margin:15px 0; display:flex; gap:10px; flex-wrap:wrap;">
+            <input id="txtForoDocente" type="text" placeholder="Escribe el tema del debate..." style="flex:1; min-width:250px; margin:0;">
+
+            <button onclick="publicarForoDocente()" style="background:linear-gradient(135deg,#27ae60,#2ecc71); color:white; border:none; padding:10px 15px; border-radius:8px; cursor:pointer;">
+                ➕ Publicar debate
+            </button>
+        </div>
+
+        <div id="contenedorForoDocente" class="foro-container"></div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECCIÓN CREAR QUIZZIZ - DOCENTE              -->
+<!-- ============================================ -->
+<div id="crearQuizziz" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>📝 Crear Nuevo Quizziz</h2>
+        
+        <div style="margin-bottom:20px;">
+            <input id="tituloQuizziz" type="text" placeholder="📌 Título del Quizziz" style="width:100%; margin-bottom:15px; padding:12px; border-radius:10px; border:2px solid #ddd;">
+            <input id="materiaQuizziz" type="text" placeholder="📚 Materia" style="width:100%; margin-bottom:15px; padding:12px; border-radius:10px; border:2px solid #ddd;">
+            
+            <div id="preguntasContainer">
+                <div class="pregunta-item" style="background:#f8f9fa; padding:20px; border-radius:12px; margin-bottom:15px; border:2px solid #e9ecef;">
+                    <input type="text" placeholder="❓ Pregunta" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #ddd;" class="pregunta-input">
+                    <input type="text" placeholder="✅ Respuesta correcta" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #28a745;" class="correcta-input">
+                    <input type="text" placeholder="❌ Opción incorrecta 1" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #dc3545;" class="incorrecta1-input">
+                    <input type="text" placeholder="❌ Opción incorrecta 2" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #dc3545;" class="incorrecta2-input">
+                    <input type="text" placeholder="❌ Opción incorrecta 3" style="width:100%; padding:12px; border-radius:8px; border:2px solid #dc3545;" class="incorrecta3-input">
+                </div>
+            </div>
+            
+            <button onclick="agregarPregunta()" style="background:#3498db; color:white; border:none; padding:12px 20px; border-radius:10px; cursor:pointer; margin-right:10px; font-weight:bold;">➕ Agregar Pregunta</button>
+            <button onclick="guardarQuizziz()" style="background:#28a745; color:white; border:none; padding:12px 30px; border-radius:10px; cursor:pointer; font-weight:bold;">💾 Guardar Quizziz</button>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECCIÓN RESULTADOS QUIZZIZ - DOCENTE         -->
+<!-- ============================================ -->
+<div id="resultadosQuizziz" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>📊 Resultados de Quizziz</h2>
+        <p style="color:#666; text-align:center; margin-bottom:25px;">
+            Aquí puedes ver el rendimiento de tus estudiantes
+        </p>
+        
+        <div id="listaResultadosQuizziz" class="resultados-container">
+            <!-- Los resultados se cargarán aquí -->
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PANEL RECTOR -->
+<!-- ========================= -->
+
+<div id="panelRector" style="display:none;">
+
+    <!-- HEADER -->
+    <div class="header">
+        <span id="rectorActivo">👑 Rector</span>
+        <span id="fechaHoraRector"></span>
+        <button class="btn-cerrar" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+
+        <button onclick="restablecerFechaInicio()" style="background:#e74c3c; color:white; border:none; padding:12px 18px; border-radius:10px; cursor:pointer; font-weight:bold; margin-top:15px;">
+            🔄 Restablecer fecha inicio asistencia
+        </button>
+    </div>
+
+    <!-- TARJETAS -->
+    <div class="cards">
+        <div class="card" onclick="mostrarRector('gestAlumnos')">👨‍🎓 Gestión Alumnos</div>
+        <div class="card" onclick="mostrarRector('gestDocentes')">👨‍🏫 Docentes</div>
+        <div class="card" onclick="mostrarRector('seccionDocentesAsignados')">✅ Docentes Asignados</div>
+        <div class="card" onclick="mostrarRector('gestHorarios')">🕒 Horarios</div>
+    </div>
+
+    <!-- GESTIÓN ALUMNOS -->
+    <div id="gestAlumnos" class="seccionRector">
+        <div class="caja">
+
+            <h2>👨‍🎓 Gestión de Alumnos</h2>
+
+            <div class="bloque">
+                <h3>📥 Nuevos Usuarios(Pendientes)</h3>
+
+                <div id="nuevosUsuarios" class="nuevos-usuarios"></div>
+
+                <button onclick="asignarTodosNuevos()" class="btn-editar">
+                    🎯 Asignar Todos Automáticamente
+                </button>
+            </div>
+
+            <div class="bloque">
+                <h3>📂 Paralelos Organizados</h3>
+                <div id="carpetasParalelos" class="carpetas-paralelos"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- GESTIÓN DOCENTES -->
+    <div id="gestDocentes" class="seccionRector" style="display:none;">
+        <div class="caja">
+            <h2>👨‍🏫 Gestión de Docentes</h2>
+            <div id="listaSolicitudesMaterias"></div>
+        </div>
+    </div>
+
+    <!-- DOCENTES ASIGNADOS -->
+    <div id="seccionDocentesAsignados" class="seccionRector" style="display:none;">
+        <div class="caja">
+            <h2>✅ Docentes Asignados</h2>
+            <div id="listaDocentesAsignados"></div>
+        </div>
+    </div>
+
+    <!-- HORARIOS -->
+    <div id="gestHorarios" class="seccionRector" style="display:none;">
+        <div class="caja">
+            <h2>🕒 Gestión de Horarios</h2>
+            <p>Panel para crear y modificar horarios</p>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modalAlumnos" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+
+        <div style="background:white; padding:30px; border-radius:20px; max-width:90%; max-height:80%; overflow:auto;">
+
+            <h2 id="modalTitulo"></h2>
+
+            <div id="listaAlumnosModal"></div>
+
+            <button onclick="cerrarModal()" style="background:#e13b28; color:white; padding:10px 20px; border:none; border-radius:10px; cursor:pointer; margin-top:20px;">
+                ❌ Cerrar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script defer src="java/funciones.js"></script>
+</body>
+</html>
