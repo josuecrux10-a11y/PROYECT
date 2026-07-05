@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: url('https://previews.123rf.com/images/kuraitennodesign/kuraitennodesign2212/kuraitennodesign221200016/198528902-black-outline-school-supplies-office-stationary-and-colored-shadows-on-a-notebook-sheet-in-a-cell.jpg');
     background-size: cover;
     background-attachment: scroll;
@@ -8,13 +8,12 @@ body {
 }
 
 /* LOGIN */
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
+.wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0;
+    min-height:auto;
 }
 .container {
     background: rgba(255, 235, 205, 0.95);
@@ -27,7 +26,56 @@ body {
     text-align: center;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
+/*nuevo*/
+.encabezado-institucion{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    width:fit-content;
+    margin:25px auto 15px auto;
+    padding:12px 28px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
 
+.logo-institucion{
+    width:95px;
+    height:95px;
+    object-fit:contain;
+}
+
+.datos-institucion{
+    text-align:left;
+}
+
+.datos-institucion h2{
+    margin:0;
+    font-size:30px;
+    font-weight:700;
+    color:#222;
+    line-height:1.1;
+    letter-spacing:.5px;
+}
+
+.datos-institucion h3{
+    margin-top:5px;
+    font-size:20px;
+    font-weight:400;
+    color:#555;
+}
+
+.titulo-portal{
+    text-align:center;
+    margin-top:5px;
+    margin-bottom:30px;
+    font-size:34px;
+    font-weight:700;
+}
+/*fin*/
 /* INPUTS */
 input, select, textarea {
     width: 90%;
