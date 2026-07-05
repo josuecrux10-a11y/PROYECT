@@ -5,19 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/Stl.css">
 <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-<title>Portal Escolar</title>
+<title>¡Bienvenidos!</title>
+<title>Sistema de Gestión Académica</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="wrapper" id="inicio">
-<div class="container">
-
-<h2>🎓 Portal Escolar</h2>
-
-<button onclick="mostrarRegistro()">📝 Registrarse</button>
-<button onclick="mostrarLogin()">🔐 Ingresar</button>
-
+<div class="pantalla-inicio">
+    <div class="encabezado-institucion">
+        <img src="img/maria.png" class="logo-institucion">
+        <div class="datos-institucion">
+            <h2>UNIDAD EDUCATIVA PARTICULAR</h2>
+            <h3>Santa María Goretti</h3>
+        </div>
+    </div>
+    <div class="wrapper" id="inicio">
+        <div class="container">
+            <h2 class="titulo1">¡Bienvenidos!</h2>
+            <h2 class="titulo-portal">Sistema de Gestión Académica</h2>
+            <button onclick="mostrarRegistro()">📝 Registrarse</button>
+            <button onclick="mostrarLogin()">🔐 Ingresar</button>
+        </div>
+    </div>
+</div>
+    
 <div id="registro" style="display:none;">
 <div id="contenedorTituloDocente" style="display:none; gap:5px;">
     
