@@ -255,53 +255,54 @@ app.post("/login", (req, res) => {
 app.post("/guardar-perfil", (req, res) => {
 
     const {
-    usuario_id,
-    nombre,
-    cedula,
-    nacimiento,
-    ciudad,
-    curso,
-    paralelo,
-    especialidad,
-    madre,
-    padre,
-    telPadres,
-    emergenciaNombre,
-    emergenciaTel,
-    emergenciaRel,
-    foto
-} = req.body;
+        usuario_id,
+        nombre,
+        cedula,
+        nacimiento,
+        ciudad,
+        curso,
+        paralelo,
+        especialidad,
+        madre,
+        padre,
+        telPadres,
+        emergenciaNombre,
+        emergenciaTel,
+        emergenciaRel,
+        foto
+    } = req.body;
+
+    const fechaNacimiento = nacimiento || null;
 
     const sql = `
-    INSERT INTO perfiles (
-    usuario_id,
-    nombre,
-    cedula,
-    nacimiento,
-    ciudad,
-    curso,
-    paralelo,
-    especialidad,
-    estado_asignacion,
-    madre,
-    padre,
-    tel_padres,
-    emergencia_nombre,
-    emergencia_tel,
-    emergencia_rel,
-    foto
-)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO perfiles (
+            usuario_id,
+            nombre,
+            cedula,
+            nacimiento,
+            ciudad,
+            curso,
+            paralelo,
+            especialidad,
+            estado_asignacion,
+            madre,
+            padre,
+            tel_padres,
+            emergencia_nombre,
+            emergencia_tel,
+            emergencia_rel,
+            foto
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
-    
-    const fechaNacimiento = nacimiento || null;
+
     conexion.query(
         sql,
         [
             usuario_id,
             nombre,
             cedula,
-            nacimiento,
+            fechaNacimiento,
             ciudad,
             curso,
             paralelo,
@@ -318,7 +319,13 @@ app.post("/guardar-perfil", (req, res) => {
         (error) => {
 
             if (error) {
+                console.log("============== ERROR MYSQL ==============");
                 console.log(error);
+                console.log("Código:", error.code);
+                console.log("Mensaje:", error.sqlMessage);
+                console.log("SQL:", error.sql);
+                console.log("========================================");
+
                 return res.status(500).json({
                     mensaje: "Error al guardar perfil"
                 });
