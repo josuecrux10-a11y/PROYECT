@@ -1028,6 +1028,14 @@ async function mostrarDocente(id){
     document.querySelectorAll(".seccionDocente")
         .forEach(s => s.style.display = "none");
 
+        //agregado
+         if (id === "resultadosQuizziz") {
+        document.getElementById(id).style.display = "block";
+        cargarResultadosQuizziz(); // ✅ Llama a la función
+        return;
+    }
+
+
     if(id === "asistenciaD"){
 
         let fechaCorrecta =
@@ -4620,95 +4628,161 @@ switch(p.respuesta_correcta){
     }
 }
 // --- CARGAR RESULTADOS PARA DOCENTE ---
+// =====================================================
+// 🔥 FUNCIÓN CORREGIDA - CARGAR RESULTADOS QUIZZIZ
+// =====================================================
+
 async function cargarResultadosQuizziz() {
 
-    let container =
-        document.getElementById(
-            "listaResultadosQuizziz"
+    let container = document.getElementById("listaResultadosQuizziz");
+
+    if (!container) {
+        console.error("❌ Contenedor no encontrado");
+        return;
+    }
+
+    const sesion = JSON.parse(localStorage.getItem("sesion"));
+
+    if (!sesion || !sesion.id) {
+        container.innerHTML = `
+            <div style="text-align:center; padding:50px; color:#e74c3c;">
+                <h3>⚠️ No has iniciado sesión</h3>
+            </div>
+        `;
+        return;
+    }
+
+    console.log("🔍 Buscando resultados para docente ID:", sesion.id);
+
+    try {
+
+        const respuesta = await fetch(
+            `http://localhost:3000/resultados-quiz-docente/${sesion.id}`
         );
 
-    if(!container) return;
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
 
-    const sesion =
-        JSON.parse(
-            localStorage.getItem("sesion")
-        );
+        const resultados = await respuesta.json();
 
-    try{
-
-        const respuesta =
-            await fetch(
-                `http://localhost:3000/resultados-quiz-docente/${sesion.id}`
-            );
-
-        const resultados =
-            await respuesta.json();
+        console.log("📊 Resultados recibidos:", resultados);
+        console.log("📊 Cantidad de resultados:", resultados.length);
 
         container.innerHTML = "";
 
-        if(resultados.length === 0){
-
+        if (!resultados || resultados.length === 0) {
             container.innerHTML = `
-                <div style="text-align:center; padding:50px; color:#666;">
+                <div style="
+                    text-align:center; 
+                    padding:50px; 
+                    color:#666;
+                    background:#f8f9fa;
+                    border-radius:20px;
+                ">
                     <h3>📊 No hay resultados disponibles</h3>
-                    <p>Aún no existen respuestas de estudiantes</p>
+                    <p style="color:#999; margin-top:10px;">
+                        Aún no hay estudiantes que hayan respondido tus quizzes.
+                    </p>
                 </div>
             `;
-
             return;
         }
 
-        resultados.forEach(r => {
+        // Mostrar cada resultado
+        resultados.forEach((r, index) => {
 
-            let div =
-                document.createElement("div");
+            let div = document.createElement("div");
 
-            div.className =
-                "resultado-card";
+            div.style.cssText = `
+                background: white;
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-left: 6px solid ${parseFloat(r.puntaje) >= 7 ? '#27ae60' : '#e74c3c'};
+            `;
 
-            div.style.cssText =
-                "background:white; border-radius:15px; padding:20px; margin-bottom:20px; box-shadow:0 2px 10px rgba(0,0,0,0.1);";
+            const fecha = r.fecha_registro 
+                ? new Date(r.fecha_registro).toLocaleString('es-ES')
+                : 'Fecha no registrada';
+
+            // Determinar estado del puntaje
+            const puntajeNum = parseFloat(r.puntaje);
+            let estadoColor = puntajeNum >= 7 ? '#27ae60' : '#e74c3c';
+            let estadoTexto = puntajeNum >= 7 ? '✅ Aprobado' : '❌ Reprobado';
 
             div.innerHTML = `
-
-                <h3>
-                    ${r.quiz}
-                </h3>
-
-                <p>
-                    👨‍🎓 ${r.alumno}
-                </p>
-
-                <p>
-                    🎯 ${r.aciertos}/${r.total}
-                </p>
-
-                <span
-                    style="
-                        background:
-                        ${r.puntaje >= 7 ? '#27ae60' : '#e74c3c'};
-                        color:white;
-                        padding:5px 15px;
-                        border-radius:20px;
-                        font-weight:bold;
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                    <h3 style="margin:0; color:#2c3e50;">📝 ${r.quiz_titulo}</h3>
+                    <span style="
+                        background: ${estadoColor};
+                        color: white;
+                        padding: 8px 18px;
+                        border-radius: 25px;
+                        font-weight: bold;
+                        font-size: 18px;
                     ">
-                    ${r.puntaje}/10
-                </span>
+                        ${r.puntaje}/10
+                    </span>
+                </div>
 
+                <div style="margin-top:15px; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:15px;">
+                    <div style="background:#f8f9fa; padding:12px; border-radius:10px;">
+                        <strong>👨‍🎓 Alumno</strong><br>
+                        <span style="font-size:16px;">${r.alumno_nombre}</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:12px; border-radius:10px;">
+                        <strong>🎯 Aciertos</strong><br>
+                        <span style="font-size:16px;">${r.aciertos}/${r.total_preguntas}</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:12px; border-radius:10px;">
+                        <strong>📅 Fecha</strong><br>
+                        <span style="font-size:16px;">${fecha}</span>
+                    </div>
+                    <div style="background:#f8f9fa; padding:12px; border-radius:10px;">
+                        <strong>📊 Estado</strong><br>
+                        <span style="font-size:16px; color:${estadoColor}; font-weight:bold;">
+                            ${estadoTexto}
+                        </span>
+                    </div>
+                </div>
             `;
 
             container.appendChild(div);
-
         });
 
-    }
-    catch(error){
+    } catch (error) {
 
-        console.error(error);
+        console.error("❌ Error al cargar resultados:", error);
 
         container.innerHTML = `
-            <div style="text-align:center; color:red;">
-                Error al cargar resultados
+            <div style="
+                text-align:center; 
+                padding:50px; 
+                color:#e74c3c;
+                background:#f8f9fa;
+                border-radius:20px;
+            ">
+                <h3>❌ Error al cargar resultados</h3>
+                <p style="color:#999; margin-top:10px;">
+                    ${error.message}
+                </p>
+                <button 
+                    onclick="cargarResultadosQuizziz()" 
+                    style="
+                        margin-top:20px;
+                        background:#4facfe;
+                        color:white;
+                        border:none;
+                        padding:10px 25px;
+                        border-radius:10px;
+                        cursor:pointer;
+                        font-weight:bold;
+                    "
+                >
+                    🔄 Reintentar
+                </button>
             </div>
         `;
     }
