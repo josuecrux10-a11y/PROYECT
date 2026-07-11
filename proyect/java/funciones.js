@@ -84,9 +84,20 @@ const ESTRUCTURA_PARALELO = {
 const recargaOriginal = location.reload;
 
 async function inicializarSistema() {
+    try {
+        const res = await fetch("http://localhost:3000/usuarios");
+        usuariosRegistrados = await res.json();
+
+        console.log("✅ Usuarios cargados desde MySQL:", usuariosRegistrados);
+
+    } catch (e) {
+        console.error("❌ Error cargando usuarios:", e);
+        usuariosRegistrados = [];
+    }
+
     alumnosBase = JSON.parse(JSON.stringify(ESTRUCTURA_PARALELO));
 
-    console.log("✅ Sistema inicializado correctamente");
+    console.log("✅ Sistema inicializado correctamente (MySQL)");
 }
 
 async function registrar() {
@@ -3754,11 +3765,9 @@ async function asignarMateriaDocente(uid) {
         select.options[
             select.selectedIndex
         ].text;
-
-    if(!materiaId){
-
+//seccion arreglada?
+  if(!materiaNombre || materiaNombre === "📚 Seleccionar materia"){
         alert("Seleccione una materia");
-
         return;
     }
 
