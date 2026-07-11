@@ -1029,11 +1029,12 @@ async function mostrarDocente(id){
         .forEach(s => s.style.display = "none");
 
         //agregado
-         if (id === "resultadosQuizziz") {
+  if (id === "resultadosQuizziz") {
         document.getElementById(id).style.display = "block";
         cargarResultadosQuizziz(); // ✅ Llama a la función
         return;
     }
+
 
 
     if(id === "asistenciaD"){
