@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nombre": "Matemática"
+    },
+    {
+        "id": 2,
+        "nombre": "Inglés"
+    },
+    {
+        "id": 3,
+        "nombre": "Ciudadanía"
+    },
+    {
+        "id": 4,
+        "nombre": "Química"
+    },
+    {
+        "id": 5,
+        "nombre": "Emprendimiento"
+    },
+    {
+        "id": 6,
+        "nombre": "Lengua y Literatura"
+    },
+    {
+        "id": 7,
+        "nombre": "Biología"
+    },
+    {
+        "id": 8,
+        "nombre": "Historia"
+    },
+    {
+        "id": 9,
+        "nombre": "Educación Física"
+    },
+    {
+        "id": 10,
+        "nombre": "Tutoría"
+    },
+    {
+        "id": 11,
+        "nombre": "Proyecto"
+    },
+    {
+        "id": 12,
+        "nombre": "Computación"
+    }
+]

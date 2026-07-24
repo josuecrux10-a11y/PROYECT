@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "quiz_id": 1,
+        "pregunta": "fosforo",
+        "opcion_a": "p",
+        "opcion_b": "k",
+        "opcion_c": "n",
+        "opcion_d": "s",
+        "respuesta_correcta": "A"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "alumno_id": 4,
+        "docente_id": 2,
+        "materia_id": 4,
+        "p1": "10.00",
+        "p2": "10.00",
+        "examen": "9.00",
+        "promedio": "9.67"
+    }
+]

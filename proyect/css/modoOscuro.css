@@ -1,0 +1,855 @@
+/*==================================================
+        MODO OSCURO - PORTAL ALUMNO
+==================================================*/
+
+/*========== PANEL ==========*/
+
+body.dark #panelAlumno{
+
+    background:#121826;
+
+}
+
+/*========== HEADER ==========*/
+
+body.dark #panelAlumno .header{
+
+    background:#1c2434;
+
+    color:white;
+
+    border-bottom:1px solid #32425c;
+
+}
+
+body.dark #fechaHoraAlumno{
+
+    color:white;
+
+}
+
+/*========== BOTONES HEADER ==========*/
+
+body.dark #panelAlumno .btnModo{
+
+    background:#334155;
+
+    color:white;
+
+    border:1px solid #475569;
+
+}
+
+body.dark #panelAlumno .btnModo:hover{
+
+    background:#475569;
+
+}
+
+body.dark #panelAlumno .btn-cerrar{
+
+    background:linear-gradient(135deg,#dc2626,#b91c1c);
+
+}
+
+body.dark #panelAlumno .btn-cerrar:hover{
+
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+
+}
+
+/*========== TARJETAS ==========*/
+
+body.dark #panelAlumno .card{
+
+    background:#1f2937;
+
+    color:white;
+
+    border:1px solid #334155;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+body.dark #panelAlumno .card:hover{
+
+    background:#2d3b52;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 28px rgba(37,99,235,.25);
+
+}
+
+/*========== PERFIL ==========*/
+
+body.dark #panelAlumno .ficha{
+
+    background:#1c2434;
+
+    color:white;
+
+}
+
+body.dark #panelAlumno #fotoPerfil{
+
+    border:5px solid #334155;
+
+}
+
+body.dark #panelAlumno .bloque{
+
+    background:#253147;
+
+    border-left:5px solid #5b8cff;
+
+}
+
+body.dark #panelAlumno h2,
+body.dark #panelAlumno h3{
+
+    color:white;
+
+}
+
+/*========== FORMULARIOS ==========*/
+
+body.dark #panelAlumno input,
+body.dark #panelAlumno textarea,
+body.dark #panelAlumno select{
+
+    background:#2e3a50;
+
+    color:white;
+
+    border:1px solid #4d5f80;
+
+}
+
+body.dark #panelAlumno input::placeholder{
+
+    color:#b8c1d1;
+
+}
+
+/*========== CAJAS ==========*/
+
+body.dark #panelAlumno .caja{
+
+    background:#182233;
+
+    color:white;
+
+    border-radius:18px;
+
+}
+
+/*========== TABLAS ==========*/
+
+body.dark #panelAlumno table{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+body.dark #panelAlumno th{
+
+    background:#2f4363;
+
+    color:white;
+
+}
+
+body.dark #panelAlumno td{
+
+    background:#1f2937;
+
+    color:#f2f2f2;
+
+    border:1px solid #38465d;
+
+}
+
+body.dark #panelAlumno tr:nth-child(even) td{
+
+    background:#253247;
+
+}
+
+body.dark #panelAlumno tr:hover td{
+
+    background:#30415d !important;
+
+}
+
+/*========== BOTONES ==========*/
+
+body.dark #panelAlumno .btnGuardar{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+}
+
+/*==================================================
+                    FORO
+==================================================*/
+
+body.dark #panelAlumno .foro-publicacion{
+
+    background:#1f2937;
+
+    border-left:5px solid #8b5cf6;
+
+    color:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.35);
+
+}
+
+body.dark #panelAlumno .foro-meta{
+
+    color:#cbd5e1;
+
+}
+
+body.dark #panelAlumno .foro-meta strong{
+
+    color:white;
+
+}
+
+body.dark #panelAlumno .foro-texto{
+
+    color:#f8fafc;
+
+}
+
+body.dark #panelAlumno .foro-publicacion input{
+
+    background:#334155;
+
+    color:white;
+
+    border:1px solid #475569;
+
+}
+
+body.dark #panelAlumno .foro-publicacion input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+body.dark #panelAlumno .foro-publicacion button{
+
+    background:linear-gradient(135deg,#667eea,#764ba2);
+
+}
+
+body.dark #panelAlumno .foro-publicacion button:hover{
+
+    filter:brightness(1.1);
+
+}
+
+/* RESPUESTAS */
+
+body.dark #panelAlumno .foro-respuesta{
+
+    background:#334155;
+
+    color:white;
+
+    border:1px solid #475569;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    margin-top:10px;
+
+}
+
+body.dark #panelAlumno .foro-respuesta strong{
+
+    color:#60a5fa;
+
+}
+
+body.dark #panelAlumno .foro-respuesta p{
+
+    color:#f8fafc;
+
+    margin-top:6px;
+
+}
+
+/*========== QUIZZIZ ==========*/
+
+body.dark #panelAlumno #quizzizAlumno{
+
+    color:white;
+
+}
+
+body.dark #panelAlumno #quizzizAlumno .caja{
+
+    background:#1c2434;
+
+    color:white;
+
+}
+
+body.dark #panelAlumno #quizzizAlumno h2,
+body.dark #panelAlumno #quizzizAlumno h3,
+body.dark #panelAlumno #quizzizAlumno p{
+
+    color:white;
+
+}
+
+body.dark #panelAlumno #quizzizAlumno button{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+body.dark #panelAlumno #quizzizAlumno button:hover{
+
+    background:#1d4ed8;
+
+}
+
+body.dark #panelAlumno #quizzizAlumno input,
+body.dark #panelAlumno #quizzizAlumno select{
+
+    background:#2e3a50;
+
+    color:white;
+
+    border:1px solid #4d5f80;
+
+}
+
+/*==================================================
+            QUIZZIZ
+==================================================*/
+
+body.dark #panelAlumno .quizziz-card{
+
+    background:#253147;
+
+    color:white;
+
+    border-left:6px solid #60a5fa;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+body.dark #panelAlumno .quizziz-card h3{
+
+    color:white;
+
+}
+
+body.dark #panelAlumno .quizziz-card span{
+
+    color:white;
+
+}
+
+/*==================================================
+        MODO OSCURO - PORTAL DOCENTE
+==================================================*/
+
+/* PANEL */
+
+body.dark #panelDocente{
+    background:#121826;
+}
+
+/* HEADER */
+
+body.dark #panelDocente .header{
+    background:#1c2434;
+    color:white;
+    border-bottom:1px solid #32425c;
+}
+
+body.dark #fechaHoraDocente{
+    color:white;
+}
+/* BOTONES */
+
+body.dark #panelDocente .btnModo{
+
+    background:#334155;
+    color:white;
+    border:1px solid #475569;
+
+}
+
+body.dark #panelDocente .btnModo:hover{
+
+    background:#475569;
+
+}
+
+body.dark #panelDocente .btn-cerrar{
+
+    background:linear-gradient(135deg,#dc2626,#b91c1c);
+
+}
+
+body.dark #panelDocente .btn-cerrar:hover{
+
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+
+}
+/* TARJETAS */
+
+body.dark #panelDocente .card{
+
+    background:#1f2937;
+    color:white;
+    border:1px solid #334155;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+body.dark #panelDocente .card:hover{
+
+    background:#2d3b52;
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(37,99,235,.25);
+
+}
+/* CAJAS */
+
+body.dark #panelDocente .caja{
+
+    background:#182233;
+    color:white;
+    border-radius:18px;
+
+}
+
+body.dark #panelDocente h2,
+body.dark #panelDocente h3{
+
+    color:white;
+
+}
+/* INPUTS */
+
+body.dark #panelDocente input,
+body.dark #panelDocente textarea,
+body.dark #panelDocente select{
+
+    background:#2e3a50;
+    color:white;
+    border:1px solid #4d5f80;
+
+}
+
+body.dark #panelDocente input::placeholder,
+body.dark #panelDocente textarea::placeholder{
+
+    color:#b8c1d1;
+
+}
+/* PERFIL */
+
+body.dark #panelDocente .perfil-docente-header{
+
+    color:white;
+
+}
+
+body.dark #panelDocente .avatar-docente img{
+
+    border:5px solid #334155;
+
+}
+
+body.dark #panelDocente .materia-docente-badge{
+
+    background:#2563eb;
+    color:white;
+
+}
+/*==================================================
+            FORO DOCENTE
+==================================================*/
+
+body.dark #panelDocente .foro-publicacion{
+
+    background:#1f2937;
+
+    color:white;
+
+    border-left:5px solid #8b5cf6;
+
+}
+
+body.dark #panelDocente .foro-publicacion:hover{
+
+    background:#263449;
+
+}
+
+body.dark #panelDocente .foro-meta{
+
+    color:#bfc9da;
+
+}
+
+body.dark #panelDocente .foro-texto{
+
+    color:#f1f5f9;
+
+}
+
+body.dark #panelDocente .foro-respuesta{
+
+    background:#2d3748;
+
+    border:1px solid #475569;
+
+}
+
+body.dark #panelDocente .foro-respuesta strong,
+body.dark #panelDocente .foro-respuesta p,
+body.dark #panelDocente .foro-respuesta small{
+
+    color:white;
+
+}
+
+body.dark #panelDocente .sin-respuestas{
+
+    color:#cbd5e1;
+
+}
+
+body.dark #panelDocente .btnEliminarForo{
+
+    background:#dc2626;
+
+}
+
+body.dark #panelDocente .btnEliminarForo:hover{
+
+    background:#b91c1c;
+
+}
+/*=========================================
+        RESULTADOS QUIZZIZ
+=========================================*/
+
+body.dark #panelDocente .resultado-quizz-card{
+
+    background:#1f2937;
+    color:white;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+body.dark #panelDocente .resultado-titulo{
+
+    color:white;
+
+}
+
+body.dark #panelDocente .resultado-info{
+
+    background:#2b3648;
+    color:white;
+
+}
+
+body.dark #panelDocente .resultado-info strong{
+
+    color:#ffffff;
+
+}
+
+body.dark #panelDocente .resultado-info span{
+
+    color:#e5e7eb;
+
+}
+
+body.dark #panelDocente .resultado-puntaje{
+
+    color:white;
+
+}
+
+body.dark #panelDocente .resultado-estado{
+
+    font-weight:bold;
+
+}
+
+/*==================================================
+        MODO OSCURO - PORTAL RECTOR
+==================================================*/
+
+/* PANEL */
+
+body.dark #panelRector{
+
+    background:#121826;
+
+}
+
+/* HEADER */
+
+body.dark #panelRector .header{
+
+    background:#1c2434;
+    color:white;
+    border-bottom:1px solid #334155;
+
+}
+
+body.dark #fechaHoraRector{
+
+    color:white;
+
+}
+
+/* BOTÓN MODO */
+
+body.dark #panelRector .btnModo{
+
+    background:#334155;
+    color:white;
+    border:1px solid #475569;
+
+}
+
+body.dark #panelRector .btnModo:hover{
+
+    background:#475569;
+
+}
+
+/* BOTÓN CERRAR */
+
+body.dark #panelRector .btn-cerrar{
+
+    background:linear-gradient(135deg,#dc2626,#991b1b);
+
+}
+
+body.dark #panelRector .btn-cerrar:hover{
+
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+
+}
+
+/* BOTÓN RESTABLECER */
+
+body.dark #btnRestablecerAsistencia{
+
+    background:#d97706 !important;
+    color:white;
+
+}
+
+body.dark #btnRestablecerAsistencia:hover{
+
+    background:#b45309 !important;
+
+}
+
+/* TARJETAS */
+
+body.dark #panelRector .card{
+
+    background:#1f2937;
+    color:white;
+    border:1px solid #334155;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+body.dark #panelRector .card:hover{
+
+    background:#2b3648;
+
+}
+
+/* CAJAS */
+
+body.dark #panelRector .caja{
+
+    background:#182233;
+    color:white;
+
+}
+
+body.dark #panelRector .caja h2{
+
+    color:white;
+
+}
+
+/* BLOQUES */
+
+body.dark #panelRector .bloque{
+
+    background:#253147;
+    border-left:5px solid #5b8cff;
+    color:white;
+
+}
+
+body.dark #panelRector .bloque h3{
+
+    color:white;
+
+}
+
+/* INPUTS */
+
+body.dark #panelRector input,
+body.dark #panelRector textarea,
+body.dark #panelRector select{
+
+    background:#2e3a50;
+    color:white;
+    border:1px solid #4d5f80;
+
+}
+
+body.dark #panelRector input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+/* BOTONES */
+
+body.dark #panelRector button{
+
+    color:white;
+
+}
+
+/* TABLAS */
+
+body.dark #panelRector table{
+
+    background:#1f2937;
+    color:white;
+
+}
+
+body.dark #panelRector th{
+
+    background:#334155;
+    color:white;
+
+}
+
+body.dark #panelRector td{
+
+    background:#1f2937;
+    color:white;
+    border:1px solid #475569;
+
+}
+
+body.dark #panelRector tr:nth-child(even) td{
+
+    background:#273548;
+
+}
+
+body.dark #panelRector tr:hover td{
+
+    background:#334155;
+
+}
+
+/* MODAL */
+
+body.dark #modalAlumnos > div{
+
+    background:#1f2937 !important;
+    color:white;
+
+}
+
+body.dark #modalTitulo{
+
+    color:white;
+
+}
+
+body.dark #listaAlumnosModal{
+
+    color:white;
+
+}
+
+/* LISTAS */
+
+body.dark #nuevosUsuarios,
+body.dark #carpetasParalelos,
+body.dark #listaSolicitudesMaterias,
+body.dark #listaDocentesAsignados{
+
+    color:white;
+
+}
+/*==================================
+      DOCENTES ASIGNADOS
+==================================*/
+
+body.dark #panelRector .docente-asignado-card{
+
+    background:#1f2937;
+    border-left:6px solid #22c55e;
+    color:white;
+
+}
+
+body.dark #panelRector .docente-asignado-titulo{
+
+    color:white;
+
+}
+
+body.dark #panelRector .docente-asignado-materia{
+
+    color:#d1d5db;
+
+}
+
+body.dark #panelRector .docente-asignado-materia strong{
+
+    color:#60a5fa;
+
+}
+body.dark #panelRector .btn-modificar-docente{
+
+    background:#d97706;
+    color:white;
+
+}
+
+body.dark #panelRector .btn-modificar-docente:hover{
+
+    background:#f59e0b;
+
+}

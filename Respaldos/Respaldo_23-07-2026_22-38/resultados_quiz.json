@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "quiz_id": 1,
+        "estudiante_id": 4,
+        "aciertos": 1,
+        "total_preguntas": 1,
+        "puntaje": "10.00",
+        "fecha": "2026-07-23T23:56:46.000Z",
+        "fecha_registro": "2026-07-23T23:56:46.000Z"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "usuario_id": 4,
+        "nombre": "karen alvear",
+        "cedula": null,
+        "nacimiento": null,
+        "ciudad": null,
+        "curso": "1 BGU",
+        "paralelo": "A",
+        "madre": null,
+        "padre": null,
+        "tel_padres": null,
+        "emergencia_nombre": null,
+        "emergencia_tel": null,
+        "emergencia_rel": null,
+        "foto": null,
+        "especialidad": "Informática",
+        "estado_asignacion": "asignado",
+        "puede_editar": 1
+    }
+]

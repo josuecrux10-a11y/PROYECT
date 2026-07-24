@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nombre": "soporte",
+        "password": "Soporte2026",
+        "rol": "soporte",
+        "fecha_registro": "2026-07-23T09:17:28.000Z",
+        "materias_solicitadas": null,
+        "estado_materias": "pendiente",
+        "materia_asignada": null
+    },
+    {
+        "id": 2,
+        "nombre": "Lic. axel castillo",
+        "password": "123",
+        "rol": "docente",
+        "fecha_registro": "2026-07-23T09:17:45.000Z",
+        "materias_solicitadas": null,
+        "estado_materias": "pendiente",
+        "materia_asignada": null
+    },
+    {
+        "id": 3,
+        "nombre": "sahid cruz",
+        "password": "123",
+        "rol": "rector",
+        "fecha_registro": "2026-07-23T09:18:07.000Z",
+        "materias_solicitadas": null,
+        "estado_materias": null,
+        "materia_asignada": null
+    },
+    {
+        "id": 4,
+        "nombre": "karen alvear",
+        "password": "123",
+        "rol": "alumno",
+        "fecha_registro": "2026-07-23T10:04:16.000Z",
+        "materias_solicitadas": null,
+        "estado_materias": null,
+        "materia_asignada": null
+    }
+]

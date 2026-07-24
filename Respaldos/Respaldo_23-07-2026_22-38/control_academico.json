@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "notas_bloqueadas": 0,
+        "conducta_bloqueada": 0,
+        "fecha_cierre_notas": null,
+        "fecha_cierre_conducta": null,
+        "creado": "2026-07-17T13:14:21.000Z",
+        "cierre_notas_ejecutado": 0,
+        "cierre_conducta_ejecutado": 0
+    }
+]

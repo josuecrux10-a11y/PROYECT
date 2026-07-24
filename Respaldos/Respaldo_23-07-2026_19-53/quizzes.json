@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "titulo": "quizz 2",
+        "materia_id": 1,
+        "docente_id": 2,
+        "fecha_creacion": "2026-07-23T23:56:24.000Z",
+        "visible": 1
+    }
+]

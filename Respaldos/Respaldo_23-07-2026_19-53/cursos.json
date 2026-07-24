@@ -1,0 +1,170 @@
+[
+    {
+        "id_curso": 13,
+        "nivel": "8",
+        "especializacion": null,
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 14,
+        "nivel": "8",
+        "especializacion": null,
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 15,
+        "nivel": "9",
+        "especializacion": null,
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 16,
+        "nivel": "9",
+        "especializacion": null,
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 17,
+        "nivel": "10",
+        "especializacion": null,
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 18,
+        "nivel": "10",
+        "especializacion": null,
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 19,
+        "nivel": "1 BGU",
+        "especializacion": "Ciencias",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 20,
+        "nivel": "1 BGU",
+        "especializacion": "Ciencias",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 21,
+        "nivel": "2 BGU",
+        "especializacion": "Ciencias",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 22,
+        "nivel": "2 BGU",
+        "especializacion": "Ciencias",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 23,
+        "nivel": "3 BGU",
+        "especializacion": "Ciencias",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 24,
+        "nivel": "3 BGU",
+        "especializacion": "Ciencias",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 25,
+        "nivel": "1 BGU",
+        "especializacion": "Informática",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 26,
+        "nivel": "1 BGU",
+        "especializacion": "Informática",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 27,
+        "nivel": "2 BGU",
+        "especializacion": "Informática",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 28,
+        "nivel": "2 BGU",
+        "especializacion": "Informática",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 29,
+        "nivel": "3 BGU",
+        "especializacion": "Informática",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 30,
+        "nivel": "3 BGU",
+        "especializacion": "Informática",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 31,
+        "nivel": "1 BGU",
+        "especializacion": "Contabilidad",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 32,
+        "nivel": "1 BGU",
+        "especializacion": "Contabilidad",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 33,
+        "nivel": "2 BGU",
+        "especializacion": "Contabilidad",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 34,
+        "nivel": "2 BGU",
+        "especializacion": "Contabilidad",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 35,
+        "nivel": "3 BGU",
+        "especializacion": "Contabilidad",
+        "paralelo": "A",
+        "jornada": "Matutina"
+    },
+    {
+        "id_curso": 36,
+        "nivel": "3 BGU",
+        "especializacion": "Contabilidad",
+        "paralelo": "B",
+        "jornada": "Matutina"
+    }
+]

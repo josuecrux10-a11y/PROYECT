@@ -1,0 +1,275 @@
+/* ========================= */
+/* CONTENEDOR DEL JUEGO */
+/* ========================= */
+
+#contenedorSopa{
+
+    display:none;
+
+    margin-top:30px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+/* ========================= */
+/* CABECERA */
+/* ========================= */
+
+.sopa-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+
+}
+
+.sopa-header h2{
+
+    color:#2c3e50;
+
+}
+
+/* ========================= */
+/* ESTADÍSTICAS */
+/* ========================= */
+
+.estadisticas{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+
+}
+
+.estadistica{
+
+    background:#3498db;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    min-width:120px;
+
+    text-align:center;
+
+}
+
+/* ========================= */
+/* LISTA PALABRAS */
+/* ========================= */
+
+#listaPalabras{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+
+    gap:10px;
+
+    margin:20px 0;
+
+}
+
+.palabra{
+
+    background:#ecf0f1;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+/* ========================= */
+/* BOTÓN */
+/* ========================= */
+
+.btnJuego{
+
+    background:#27ae60;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+.btnJuego:hover{
+
+    background:#219150;
+
+}
+
+/* ========================= */
+/* TABLERO */
+/* ========================= */
+
+#tableroSopa{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+/* FILAS */
+
+#tableroSopa div{
+
+    display:flex;
+
+}
+
+/* CASILLAS */
+
+.casilla{
+
+    width:45px;
+
+    height:45px;
+
+    margin:3px;
+
+    border-radius:8px;
+
+    background:white;
+
+    border:2px solid #3498db;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#2c3e50;
+
+    cursor:pointer;
+
+    transition:
+    background .25s,
+    color .25s,
+    transform .2s,
+    box-shadow .2s;
+
+    user-select:none;
+
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.casilla:hover{
+
+    background:#3498db;
+
+    color:white;
+
+    transform:scale(1.12);
+
+    box-shadow:0 0 12px rgba(52,152,219,.6);
+
+}
+
+/* LETRA SELECCIONADA */
+
+.seleccionada{
+
+    background:#2ecc71;
+
+    color:white;
+
+    border-color:#27ae60;
+
+    transform:scale(1.12);
+
+    box-shadow:0 0 12px rgba(46,204,113,.7);
+
+}
+
+/* PALABRA ENCONTRADA */
+
+.encontrada{
+
+    background:#f39c12;
+
+    color:white;
+
+    border-color:#d68910;
+
+    box-shadow:0 0 15px rgba(243,156,18,.8);
+
+    animation:brillar .8s ease;
+
+}
+
+/* ========================= */
+/* ANIMACIÓN */
+/* ========================= */
+
+@keyframes brillar{
+
+    0%{
+
+        transform:scale(.8);
+
+        opacity:.4;
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}

@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "usuario_id": 2,
+        "foto": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        "titulo": "ciencias",
+        "materia": null,
+        "correo": "nickoleadriano@gmail.com",
+        "telefono": "0123456789",
+        "experiencia": "3 años",
+        "frase": "fliz",
+        "presentacion": "buenas noches chicos",
+        "archivo_pdf": null,
+        "fecha_actualizacion": "2026-07-23T12:05:10.000Z",
+        "pdf_presentacion": null,
+        "formacion": "computacion",
+        "perfil_bloqueado": 1
+    }
+]

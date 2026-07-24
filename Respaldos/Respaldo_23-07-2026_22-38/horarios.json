@@ -1,0 +1,11 @@
+[
+    {
+        "id_horario": 1,
+        "id_curso": 25,
+        "id_materia": 2,
+        "id_docente": 2,
+        "dia": "Lunes",
+        "hora_inicio": "07:00:00",
+        "hora_fin": "07:40:00"
+    }
+]
