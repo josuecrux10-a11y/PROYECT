@@ -1,54 +1,1989 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unidad Educativa Santa María Goretti</title>
-     <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoiDDIJ4amIjdVw02HvG6_uBF1wKNpRyWCSQ&s">
-<link rel="stylesheet" href="css/portalestudiantil.css">
-    </head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/Stl.css">
+<link rel="stylesheet" href="css/modoOscuro.css">
+<link rel="stylesheet" href="css/sopaLetras.css">
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<title>¡Bienvenidos!</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
 <body>
-    <nav id="navbarra">
-        <ul>
-            <li><a href="proyecto_F.html">Ingreso al Portal Estudiantil</a></li>
-            <li><a href="manual_usuario.html">Ingreso al Manual de usuarios</a></li>
-        </ul>
-    </nav>
+
+<div id="pantallaInicio" class="pantalla-inicio">
+    <div class="encabezado-institucion">
+
+        <img src="img/maria.png" class="logo-institucion">
+
+        <div class="datos-institucion">
+            <h2>UNIDAD EDUCATIVA PARTICULAR</h2>
+            <h3>Santa María Goretti</h3>
+        </div>
+
+    </div>
+
+    <div class="wrapper" id="inicio">
+
+        <div class="container">
+            <h2 class="titulo1">¡Bienvenidos!</h2>
+            <h2 class="titulo-portal">Sistema de Gestión Académica</h2>
+            <button onclick="mostrarRegistro()">📝 Registrarse</button>
+
+            <button onclick="mostrarLogin()">🔐 Ingresar</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="registro" class="wrapper" style="display:none;">
+
+    <div class="container">
+
+        <h2 class="titulo1">📝 Registro</h2>
+        <h3 class="titulo-portal">Crear nueva cuenta</h3>    
+<div id="contenedorTituloDocente" style="display:none; gap:5px;">
     
+    <select id="tituloDocente" style="width:90px;">
+        <option value="Lic.">Lic.</option>
+        <option value="MSc.">MSc.</option>
+        <option value="Abg.">Abg.</option>
+        <option value="Ing.">Ing.</option>
+        <option value="Dr.">Dr.</option>
+        <option value="PhD.">PhD.</option>
+    </select>
 
-<header id="encabezado">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoiDDIJ4amIjdVw02HvG6_uBF1wKNpRyWCSQ&s" alt="Unidad Educativa Santa María Goretti">
-<h1>Unidad Educativa</h1>
-<p>Santa María Goretti</p>       
-    </header>
+    <input
+        id="regNombre"
+        placeholder="Nombre y apellido"
+        maxlength="40"
+        style="flex:1;"
+    >
 
-    <section class="secciones">
-        <h2>Informacion sobre la escuela</h2>
-        <p>Es una institución particular con una trayectoria consolidada en la formación integral de niños y jóvenes. Su enfoque pedagógico busca formar buenos cristianos y honestos ciudadanos, promoviendo valores espirituales sólidos a la par de un rendimiento académico exigente.
-        La oferta educativa de la institución abarca desde los niveles iniciales de maternal y preescolar hasta la Educación General Básica y el Bachillerato. La unidad es reconocida por su ambiente familiar y su compromiso con la excelencia, fomentando una relación constante y cercana entre docentes y estudiantes para favorecer un aprendizaje significativo.
-        Asimismo, la institución integra activamente a las familias en el proceso educativo, lo cual es un pilar fundamental de su modelo de enseñanza. Esto se complementa con programas de capacitación continua para su planta docente y un sistema de seguimiento personalizado, asegurando que el desarrollo integral de cada estudiante sea monitoreado de manera constante.</p>
-    </section>
+</div>
 
-    <section class="secciones">
-        <h2>Misión</h2>
-<p>Es formar integralmente a los estudiantes bajo principios de excelencia académica y valores humano-cristianos. Se busca preparar a los alumnos para que se conviertan en ciudadanos íntegros, capaces de servir a la sociedad con honestidad, responsabilidad y un compromiso ético inquebrantable ante los diversos desafíos que presenta el entorno actual.</p>
-    </section>
-    <section class="secciones">
-        <h2>Visión</h2>
-<p>Es consolidarse como un referente en el ámbito educativo local, destacándose por su alta calidad humana y su enfoque pedagógico innovador. La meta institucional es formar líderes con capacidad crítica y una profunda vocación de servicio, orientados al éxito académico y profesional, así como al bienestar general de la sociedad ecuatoriana.</p>
-    </section>
-    <section class="secciones">
-<h2>Ingreso academico</h2>
-        <ul class="enlaces">
-            <li><a href="proyecto_F.html" target="_blank">Ingreso al Portal Estudiantil</a></li>
-        </ul>
-    </section>
-    <section class="secciones">
-<h2>Manual de Usuario</h2>
-        <ul class="enlaces">
-            <li><a href="manual_usuario.html" target="_blank">Manual de usuario</a></li>
-        </ul>
-    </section>
-    <footer id="pie">&copy;Unidad Educativa Santa María Goretti 1950 - 2026</footer>
+<input
+    id="regNombreSolo"
+    placeholder="Nombre y apellido"
+    maxlength="40"
+>
+<input id="regPass" type="password" placeholder="Clave" maxlength="20">
+
+<select id="regRol" onchange="cambiarRolRegistro()">
+<option value="">Seleccione un rol</option>
+<option value="alumno">👤 Alumno</option>
+<option value="docente">👨‍🏫 Docente</option>
+<option value="rector">👨‍💼 Rectoría</option>
+</select>
+<select id="cursoAlumno" style="display:none;">
+    <option value="">Seleccione curso</option>
+    <option value="8">8° EGB</option>
+    <option value="9">9° EGB</option>
+    <option value="10">10° EGB</option>
+    <option value="1BGU">1° BGU</option>
+    <option value="2BGU">2° BGU</option>
+    <option value="3BGU">3° BGU</option>
+</select>
+<select id="especialidadAlumno" style="display:none;">
+    <option value="">Seleccione especialidad</option>
+    <option value="Ciencias">Ciencias</option>
+    <option value="Computacion">Computación</option>
+    <option value="Contabilidad">Contabilidad</option>
+</select>
+
+</select>
+<div id="materiasDocente" class="materias-container" style="display:none;">
+
+    <h3 class="titulo-materias">📚 Materias que puede impartir</h3>
+
+    <div class="grid-materias">
+
+        <label class="materia-card"><input type="checkbox" value="Matemática"><div class="materia-info"><div class="materia-icono">🧮</div><span>Matemática</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Inglés"><div class="materia-info"><div class="materia-icono">🇬🇧</div><span>Inglés</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Ciudadanía"><div class="materia-info"><div class="materia-icono">🤝</div><span>Ciudadanía</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Química"><div class="materia-info"><div class="materia-icono">🧪</div><span>Química</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Emprendimiento"><div class="materia-info"><div class="materia-icono">💼</div><span>Emprendimiento</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Lengua y Literatura"><div class="materia-info"><div class="materia-icono">📖</div><span>Lengua y Literatura</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Biología"><div class="materia-info"><div class="materia-icono">🌱</div><span>Biología</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Historia"><div class="materia-info"><div class="materia-icono">🏛️</div><span>Historia</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Educación Física"><div class="materia-info"><div class="materia-icono">⚽</div><span>Educación Física</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Tutoría"><div class="materia-info"><div class="materia-icono">👨‍🏫</div><span>Tutoría</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Proyecto"><div class="materia-info"><div class="materia-icono">📁</div><span>Proyecto</span></div></label>
+        <label class="materia-card"><input type="checkbox" value="Computación"><div class="materia-info"><div class="materia-icono">💻</div><span>Computación</span></div></label>
+
+    </div>
+
+</div>
+
+<input type="password" id="claveRector" placeholder="🔑 Clave especial rector" style="display:none;">
+
+<button onclick="registrar()">✅ Guardar Registro</button>
+
+<button class="btn-volver" onclick="volverInicio()">
+    ⬅ Volver al inicio
+</button>
+</div>
+</div>
+
+<div id="formLogin" class="wrapper" style="display:none;">
+
+    <div class="container">
+
+        <h2>🔐 Iniciar sesión</h2>
+
+        <input id="logNombre" placeholder="Nombre y apellido">
+
+        <input
+            id="logPass"
+            type="password"
+            placeholder="Clave">
+
+        <button onclick="login()">
+            🚀 Entrar al Portal
+        </button>
+        <button class="btn-volver" onclick="volverInicio()">
+            ⬅ Volver al inicio
+        </button>
+    </div>
+
+</div>
+
+<div id="panelAlumno" style="display:none;">
+
+<div class="header">
+    <span id="usuarioActivo">👤 Alumno</span>
+    <span id="fechaHoraAlumno"></span>
+    <button onclick="cambiarModo()" class="btnModo">🌙</button>
+    <button class="btn-cerrar" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+</div>
+
+<div class="cards">
+<div class="card" onclick="mostrarSeccion('perfil')">👤 Mi Perfil</div>
+<div class="card" onclick="mostrarSeccion('materias')">📚 Mis Materias</div>
+<div class="card" onclick="mostrarSeccion('notas')">📝 Mis Notas</div>
+<div class="card" onclick="mostrarSeccion('conducta')">⭐ Mi Conducta</div>
+<div class="card" onclick="mostrarSeccion('horario')">🕒 Mi Horario</div>
+<div class="card" onclick="mostrarSeccion('foroAlumno')">💬 Foro Estudiantil</div>
+<div class="card" onclick="mostrarSeccion('quizzizAlumno')">🎮 Quizziz</div>
+<div class="card" onclick="mostrarSeccion('juegosEducativos')">🎮 Juegos Educativos</div>
+<div class="card" onclick="abrirMisTickets()"> 🎫 Mis Tickets</div>
+</div>
+
+<div id="perfil" class="seccion">
+    <div class="ficha">
+        <div class="ficha-header">
+<input type="file" id="fotoInput" accept="image/*">
+<img id="fotoPerfil" src="https://cdn-icons-png.flaticon.com/512/6326/6326055.png" alt="Foto de perfil" onclick="document.getElementById('fotoInput').click()">
+<h2 id="nombreVista">Nombre del estudiante</h2>
+</div>
+
+<div class="bloque">
+<h3>📘 Datos Personales</h3>
+<div class="grid">
+<input id="nombre" placeholder="Nombre completo">
+<input id="cedula" placeholder="Cédula" maxlength="13">
+<input id="nacimiento" type="date">
+<input id="ciudad" placeholder="Ciudad">
+
+<input
+    id="curso"
+    type="text"
+    placeholder="Curso"
+    readonly
+>
+
+<input
+    id="paralelo"
+    type="text"
+    placeholder="Pendiente de asignación por Rectoría"
+    readonly
+>
+
+<input
+    id="especialidad"
+    type="text"
+    placeholder="Especialidad"
+    readonly
+>
+
+</div>
+</div>
+
+<div class="bloque">
+<h3>👨‍👩‍👧 Contacto Padres</h3>
+<div class="grid">
+<input id="madre" placeholder="Nombre de la madre">
+<input id="padre" placeholder="Nombre del padre">
+<input id="telPadres" placeholder="Teléfono padres" type="tel">
+</div>
+</div>
+
+<div class="bloque">
+<h3>🚑 Contacto Emergencia</h3>
+<div class="grid">
+<input id="emergenciaNombre" placeholder="Nombre contacto">
+<input id="emergenciaTel" placeholder="Teléfono" type="tel">
+<input id="emergenciaRel" placeholder="Relación">
+</div>
+</div>
+
+<button
+    id="guardarPerfil"
+    class="btnGuardar"
+    onclick="guardarPerfil()">
+
+    💾 Guardar Perfil
+
+</button>
+</div>
+</div>
+
+<div id="materias" class="seccion">
+    <div class="caja">
+        <h2>📚 Mis Materias</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th>Docente Responsable</th>
+                </tr>
+            </thead>
+            <tbody id="tablaMateriasAlumno"></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="notas" class="seccion">
+    <div class="caja">
+        <h2>📝 Mis Notas</h2>
+        <table id="tablaNotas">
+            <tr>
+                <th>Materia</th>
+                <th>P1</th>
+                <th>P2</th>
+                <th>Examen</th>
+                <th>Promedio</th>
+                <th>Estado</th>
+            </tr>
+            <tr><td>Matemáticas</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Inglés</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Ciudadanía</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Química</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Emprendimiento</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Lengua y Literatura</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Historia</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Biología</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Educación Física</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Computación</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Tutoría</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr><td>Proyecto</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        </table>
+    </div>
+</div>
+
+<div id="conducta" class="seccion">
+    <div class="conducta-container">
+        <h2 class="conducta-title">⭐ Mi Evaluación de Conducta</h2>
+
+        <div class="conducta-leyenda">
+            <h3 style="margin-bottom:20px; font-size:24px;">📋 ¿Qué significa cada calificación?</h3>
+
+            <div class="leyenda-grid">
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-E">E</div>
+                    <strong>Excelente</strong><br>
+                    <small>Ejemplar en comportamiento</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-AA">AA</div>
+                    <strong>Actitud Aplicada</strong><br>
+                    <small>Excelente disposición</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-A">A</div>
+                    <strong>Adecuada</strong><br>
+                    <small>Cumple las normas</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-R">R</div>
+                    <strong>Regular</strong><br>
+                    <small>Necesita mejorar</small>
+                </div>
+
+                <div class="leyenda-item">
+                    <div class="conducta-badge badge-D">D</div>
+                    <strong>Deficiente</strong><br>
+                    <small>Dificultades constantes</small>
+                </div>
+            </div>
+        </div>
+
+        <table class="table-conducta-alumno">
+            <thead>
+                <tr>
+                    <th>📚 Materia</th>
+                    <th>⭐ Conducta</th>
+                    <th>📅 Fecha</th>
+                    <th>👨‍🏫 Docente</th>
+                    <th>💬 Observación</th>
+                </tr>
+            </thead>
+            <tbody id="tablaConductaAlumno"></tbody>
+        </table>
+
+        <div id="sinConducta" class="sin-conducta">
+            📭 No hay evaluaciones de conducta registradas aún.<br>
+            <strong>Tus docentes aún no han calificado tu conducta este período.</strong>
+        </div>
+    </div>
+</div>
+
+<div id="horario" class="seccion">
+    <div class="caja">
+        <h2>🕒 Mi Horario de Clases</h2>
+
+        <table class="tabla-horario">
+
+            <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+
+            <tr>
+                <td>06:40 - 07:00</td>
+                <td colspan="5" style="background:linear-gradient(135deg,#39e2a2,#27ae60);color:black;font-weight:bold;">
+                    🎒 INGRESO
+                </td>
+            </tr>
+
+            <tr><td>07:00 - 07:40</td><td id="Lunes1"></td><td id="Martes1"></td><td id="Miércoles1"></td><td id="Jueves1"></td><td id="Viernes1"></td></tr>
+
+            <tr><td>07:40 - 08:20</td><td id="Lunes2"></td><td id="Martes2"></td><td id="Miércoles2"></td><td id="Jueves2"></td><td id="Viernes2"></td></tr>
+
+            <tr><td>08:20 - 09:00</td><td id="Lunes3"></td><td id="Martes3"></td><td id="Miércoles3"></td><td id="Jueves3"></td><td id="Viernes3"></td></tr>
+
+            <tr><td>09:00 - 09:20</td><td colspan="5" class="receso">🍎 RECESO</td></tr>
+
+            <tr><td>09:20 - 10:00</td><td id="Lunes4"></td><td id="Martes4"></td><td id="Miércoles4"></td><td id="Jueves4"></td><td id="Viernes4"></td></tr>
+
+            <tr><td>10:00 - 10:40</td><td id="Lunes5"></td><td id="Martes5"></td><td id="Miércoles5"></td><td id="Jueves5"></td><td id="Viernes5"></td></tr>
+
+            <tr><td>10:40 - 11:20</td><td id="Lunes6"></td><td id="Martes6"></td><td id="Miércoles6"></td><td id="Jueves6"></td><td id="Viernes6"></td></tr>
+
+            <tr><td>11:20 - 12:00</td><td id="Lunes7"></td><td id="Martes7"></td><td id="Miércoles7"></td><td id="Jueves7"></td><td id="Viernes7"></td></tr>
+                <td>12:00</td>
+                <td colspan="5" style="background:linear-gradient(135deg,#39e2a2,#27ae60);color:black;font-weight:bold;">
+                    🏠 SALIDA
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECCIÓN QUIZZIZ - ALUMNO                     -->
+<!-- ============================================ -->
+<div id="quizzizAlumno" class="seccion" style="display:none;">
+    <div class="caja">
+        <h2>🎮 Bienvenido a Quizziz Games</h2>
+        <p style="color:#666; text-align:center; margin-bottom:25px;">
+            Responde los cuestionarios creados por tus docentes
+        </p>
+        
+        <div id="listaQuizzizAlumno" class="quizziz-container">
+            <!-- Los quizziz se cargarán aquí dinámicamente -->
+        </div>
+    </div>
+</div>
+
+<div id="foroAlumno" class="seccion">
+    <div class="caja">
+        <h2>💬 Foro Estudiantil</h2>
+        <p style="color:#666; font-style:italic; text-align:center;">Comparte tus Opiniones con tu Docente.</p>
+
+        <h3>📌 Preguntas Recientes</h3>
+        <div id="contenedorForoAlumno" class="foro-container"></div>
+    </div>
+</div>
+
+<div id="perfilDocenteAlumno"
+     class="seccion"
+     style="display:none;">
+
+    <div class="caja">
+
+        <!-- CABECERA DEL DOCENTE -->
+        <div class="cabecera-docente">
+
+            <img id="alumnoVistaFoto"
+                 class="foto-docente">
+
+            <div class="info-principal-docente">
+
+                <h1 id="alumnoVistaNombre"></h1>
+
+                <h3 class="cargo-docente">
+                    👨‍🏫 Docente de
+                    <span id="alumnoVistaMateria"></span>
+                </h3>
+
+                <p class="titulo-docente">
+                    🎓 <span id="alumnoVistaTitulo"></span>
+                </p>
+
+                <p class="experiencia-docente">
+                    🏆 <span id="alumnoVistaExperiencia"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="grid-docente">
+
+            <div class="info-card">
+                <h3>👤 Sobre mí</h3>
+                <p id="alumnoVistaPresentacion"></p>
+            </div>
+
+            <div class="info-card">
+                <h3>🎯 Frase Motivacional</h3>
+                <p id="alumnoVistaFrase"></p>
+            </div>
+
+        </div>
+
+        <div class="grid-docente">
+
+            <div class="info-card">
+            <h3>📞 Información de Contacto</h3>
+
+            <p>
+                <strong>Correo:</strong><br>
+                <span id="alumnoVistaCorreo"></span>
+            </p>
+
+            <p>
+                <strong>Teléfono:</strong><br>
+                <span id="alumnoVistaTelefono"></span>
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>🎓 Formación Académica</h3>
+
+            <p id="alumnoVistaFormacion"></p>
+        </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:30px;">
+
+            <button
+                class="btn-volver-docente"
+                onclick="mostrarSeccion('materias')">
+
+                ← Volver a Materias
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- JUEGOS EDUCATIVOS -->
+<!-- ========================= -->
+
+<div id="juegosEducativos"
+     class="seccion"
+     style="display:none;">
+
+    <div class="caja">
+
+        <h2>🎮 Juegos Educativos</h2>
+
+        <p>Bienvenido al Centro de Juegos Educativos.</p>
+
+        <p>
+            Aquí podrás reforzar tus conocimientos mediante juegos interactivos.
+        </p>
+
+        <div class="cards">
+
+    <div class="card">
+
+        <h3>🧩 Sopa de Letras</h3>
+
+        <p>
+            Encuentra todas las palabras relacionadas con informática.
+        </p>
+
+        <button onclick="abrirSopaLetras()">
+            ▶ Iniciar Juego
+        </button>
+
+    </div>
+
+</div>
+
+<!-- CONTENEDOR DEL JUEGO -->
+    <div id="contenedorSopa" style="display:none;">
+
+    <!-- CABECERA -->
+
+    <div class="sopa-header">
+
+        <h2>🧩 Sopa de Letras</h2>
+
+        <button class="btnJuego"
+                onclick="reiniciarSopa()">
+            🔄 Nuevo Juego
+        </button>
+
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+
+    <div class="estadisticas">
+
+        <div class="estadistica">
+
+            ⏱️ Tiempo
+
+            <br>
+
+            <span id="tiempoJuego">
+
+                00:00
+
+            </span>
+
+        </div>
+
+        <div class="estadistica">
+
+            📚 Encontradas
+
+            <br>
+
+            <span id="contadorPalabras">
+
+                0 / 5
+
+            </span>
+
+        </div>
+
+        <div class="estadistica">
+
+            🏆 Puntaje
+
+            <br>
+
+            <span id="puntajeJuego">
+
+                0
+
+            </span>
+
+            pts
+
+        </div>
+
+    </div>
+
+    <!-- LISTA DE PALABRAS -->
+   <div
+    style="
+        margin:20px 0;
+        background:#ecf0f1;
+        padding:12px;
+        border-radius:10px;
+        font-size:20px;
+        font-weight:bold;
+        text-align:center;
+    ">
+
+    Palabra seleccionada:
+
+    <span
+        id="palabraActual"
+        style="color:#2980b9;">
+    </span>
+
+</div>
+
+    <h3>Palabras</h3>
+
+    <div id="listaPalabras">
+
+    </div>
+
+    <!-- TABLERO -->
+
+    <div id="tableroSopa">
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div id="panelDocente" style="display:none;">
+    <div class="header">
+        <span id="docenteActivo">👨‍🏫 Docente</span>
+        <span id="fechaHoraDocente"></span>
+        <button onclick="cambiarModo()" class="btnModo">🌙</button>
+        <button class="btn-cerrar" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+    </div>
+
+    <div class="cards">
+        <div class="card" onclick="mostrarDocente('perfilD')">👤 Mi Perfil</div>
+        <div class="card" onclick="mostrarDocente('asistenciaD')">📋 Asistencia</div>
+        <div class="card" onclick="mostrarDocente('notasD')">📝 Calificar Notas</div>
+        <div class="card" onclick="mostrarDocente('conductaD')">⭐ Calificar Conducta</div>
+        <div class="card" onclick="mostrarDocente('foroDocente')">💬 Publicar Foro</div>
+        <div class="card" onclick="mostrarDocente('crearQuizziz')">📝 Crear Quizziz</div>
+        <div class="card" onclick="mostrarDocente('resultadosQuizziz')">📊 Resultados Quizziz</div>
+        <div class="card" onclick="abrirMisTickets()"> 🎫 Mis Tickets</div>
+    </div>
+
+    <!-- PERFIL -->
+   <div id="perfilD" class="seccionDocente">
+
+    <div class="caja">
+
+        <h2>👨‍🏫 Perfil Docente</h2>
+
+        <div class="perfil-docente-header">
+
+            <label for="fotoDocente" class="avatar-docente">
+
+                <img id="fotoPreview"
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                alt="Foto Docente">
+
+            </label>
+
+            <input type="file"
+            id="fotoDocente"
+            accept="image/*"
+            style="display:none;">
+
+            <h3 id="nombreDocentePerfil">
+                Docente
+            </h3>
+
+        </div>
+        <div class="info-docente-auto">
+            
+             <div class="materia-docente-badge">
+            <span id="materiaDocentePerfil">
+            Materia no asignada
+            </span>
+        </div>
+        </div>
+        <div class="grid">
+            <input id="dTitulo" placeholder="Título profesional">
+            <input id="dCorreo" placeholder="Correo institucional">
+            <input id="dTelefono" placeholder="Teléfono">
+            <input id="dExperiencia" placeholder="Años de experiencia">
+            <input id="dFrase" placeholder="Frase motivacional">
+        </div>
+
+        <h3>🎓 Formación Académica</h3>
+        <textarea
+            id="dFormacion"
+            placeholder="Ejemplo: Licenciada en Ciencias de la Educación. Maestría en Pedagogía. Certificación en TIC aplicadas a la enseñanza."
+            style="width:100%;height:90px;margin-top:15px;">
+        </textarea>
+        <h3> Presentacion</h3>
+        <textarea
+            id="dPresentacion"
+            placeholder="Escribe una presentación para tus estudiantes..."
+            style="width:100%;height:120px;margin-top:15px;">
+        </textarea>
+
+        <div class="acciones-docente">
+
+    <button
+    type="button"
+    class="btn-guardar"
+    onclick="guardarDocente()">
+
+        💾 Guardar Perfil
+
+    </button>
+
+</div>
+<p id="estadoPerfilDocente"></p>
+</div>
+</div>
+
+<!-- ASISTENCIA -->
+<div id="asistenciaD" class="seccionDocente" style="display:none;">
+
+    <div class="caja">
+
+        <h2>📋 Control de Asistencia</h2>
+
+        <hr style="margin:20px 0;">
+
+        <h3>📚 Cursos</h3>
+
+        <div
+            id="listaCursosAsistencia"
+            class="grid-asistencia">
+
+        </div>
+
+        <div
+            id="detalleAsistencia"
+            style="margin-top:20px; display:none;">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- NOTAS -->
+<div id="notasD" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>📝 Calificar Notas de Alumnos</h2>
+
+        <div class="buscar-alumnos">
+            <input type="text" id="buscarAlumnoNota" class="alumno-search" placeholder="🔍 Buscar alumno">
+            <button class="btn-buscar" onclick="buscarAlumnosNotas()">🔍 Buscar</button>
+        </div>
+
+        <div id="listaAlumnosNotas" class="alumnos-lista"></div>
+    </div>
+</div>
+
+<!-- CONDUCTA -->
+<div id="conductaD" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>⭐ Calificar Conducta</h2>
+
+        <div class="buscar-alumnos">
+            <input type="text" id="buscarAlumnoConducta" class="alumno-search" placeholder="🔍 Buscar alumno">
+            <button class="btn-buscar" onclick="buscarAlumnos()">🔍 Buscar</button>
+        </div>
+
+        <div id="listaAlumnosConducta" class="alumnos-lista"></div>
+    </div>
+</div>
+
+<!-- FORO -->
+<div id="foroDocente" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>💬 Foro Docente</h2>
+
+        <div style="margin:15px 0; display:flex; gap:10px; flex-wrap:wrap;">
+            <input id="txtForoDocente" type="text" placeholder="Escribe el tema del debate..." style="flex:1; min-width:250px; margin:0;">
+
+            <button onclick="publicarForoDocente()" style="background:linear-gradient(135deg,#27ae60,#2ecc71); color:white; border:none; padding:10px 15px; border-radius:8px; cursor:pointer;">
+                ➕ Publicar debate
+            </button>
+        </div>
+
+        <div id="contenedorForoDocente" class="foro-container"></div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECCIÓN CREAR QUIZZIZ - DOCENTE              -->
+<!-- ============================================ -->
+<div id="crearQuizziz" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>📝 Crear Nuevo Quizziz</h2>
+        
+        <div style="margin-bottom:20px;">
+            <input id="tituloQuizziz" type="text" placeholder="📌 Título del Quizziz" style="width:100%; margin-bottom:15px; padding:12px; border-radius:10px; border:2px solid #ddd;">
+            <input id="materiaQuizziz" type="text" placeholder="📚 Materia" style="width:100%; margin-bottom:15px; padding:12px; border-radius:10px; border:2px solid #ddd;">
+            
+            <div id="preguntasContainer">
+                <div class="pregunta-item" style="background:#f8f9fa; padding:20px; border-radius:12px; margin-bottom:15px; border:2px solid #e9ecef;">
+                    <input type="text" placeholder="❓ Pregunta" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #ddd;" class="pregunta-input">
+                    <input type="text" placeholder="✅ Respuesta correcta" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #28a745;" class="correcta-input">
+                    <input type="text" placeholder="❌ Opción incorrecta 1" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #dc3545;" class="incorrecta1-input">
+                    <input type="text" placeholder="❌ Opción incorrecta 2" style="width:100%; margin-bottom:10px; padding:12px; border-radius:8px; border:2px solid #dc3545;" class="incorrecta2-input">
+                    <input type="text" placeholder="❌ Opción incorrecta 3" style="width:100%; padding:12px; border-radius:8px; border:2px solid #dc3545;" class="incorrecta3-input">
+                </div>
+            </div>
+            
+            <button onclick="agregarPregunta()" style="background:#3498db; color:white; border:none; padding:12px 20px; border-radius:10px; cursor:pointer; margin-right:10px; font-weight:bold;">➕ Agregar Pregunta</button>
+            <button onclick="guardarQuizziz()" style="background:#28a745; color:white; border:none; padding:12px 30px; border-radius:10px; cursor:pointer; font-weight:bold;">💾 Guardar Quizziz</button>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECCIÓN RESULTADOS QUIZZIZ - DOCENTE         -->
+<!-- ============================================ -->
+<div id="resultadosQuizziz" class="seccionDocente" style="display:none;">
+    <div class="caja">
+        <h2>📊 Resultados de Quizziz</h2>
+        <p style="color:#666; text-align:center; margin-bottom:25px;">
+            Aquí puedes ver el rendimiento de tus estudiantes
+        </p>
+        
+        <div id="listaResultadosQuizziz" class="resultados-container">
+            <!-- Los resultados se cargarán aquí -->
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PANEL RECTOR -->
+<!-- ========================= -->
+
+<div id="panelRector" style="display:none;">
+
+    <!-- HEADER -->
+    <div class="header">
+        <span id="rectorActivo">👑 Rector</span>
+        <span id="fechaHoraRector"></span>
+        <button onclick="cambiarModo()" class="btnModo">🌙</button>
+        <button class="btn-cerrar" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+
+        <button
+            id="btnRestablecerAsistencia"
+            onclick="solicitarRestablecimiento()"
+            style="
+                background:#f39c12;
+                color:white;
+                border:none;
+                padding:12px 18px;
+                border-radius:10px;
+                cursor:pointer;
+                font-weight:bold;
+                margin-top:15px;
+            ">
+
+            📩 Solicitar autorización al Soporte
+
+        </button>
+    </div>
+
+    <!-- TARJETAS -->
+    <div class="cards">
+
+        <div class="card" onclick="mostrarRector('gestAlumnos')">
+            👨‍🎓 Gestión Alumnos
+        </div>
+
+        <div class="card" onclick="mostrarRector('gestDocentes')">
+            👨‍🏫 Docentes
+        </div>
+
+        <div class="card" onclick="mostrarRector('seccionDocentesAsignados')">
+            ✅ Docentes Asignados
+        </div>
+
+        <div class="card" onclick="mostrarRector('gestHorarios')">
+            🕒 Horarios
+        </div>
+
+        <div class="card" onclick="mostrarRector('controlAcademico')">
+            🔒 Control Académico
+        </div>
+
+        <div class="card" onclick="abrirMisTickets()">
+            🎫 Mis Tickets
+        </div>
+
+    </div>
+
+    <!-- GESTIÓN ALUMNOS -->
+    <div id="gestAlumnos" class="seccionRector">
+        <div class="caja">
+
+            <h2>👨‍🎓 Gestión de Alumnos</h2>
+
+            <div class="bloque">
+                <h3>📥 Nuevos Usuarios(Pendientes)</h3>
+
+                <div id="nuevosUsuarios" class="nuevos-usuarios"></div>
+
+                <button onclick="asignarTodosNuevos()" class="btn-editar">
+                    🎯 Asignar Todos Automáticamente
+                </button>
+            </div>
+
+            <div class="bloque">
+                <h3>📂 Paralelos Organizados</h3>
+                <div id="carpetasParalelos" class="carpetas-paralelos"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- GESTIÓN DOCENTES -->
+<div id="gestDocentes" class="seccionRector" style="display:none;">
+    <div class="caja">
+        <h2>👨‍🏫 Gestión de Docentes</h2>
+        <p style="color:#666; margin-bottom:20px;">
+            Aquí puedes ver los docentes que han solicitado materias y asignarles una.
+        </p>
+        <div id="listaSolicitudesMaterias"></div>
+    </div>
+</div>
+
+    <!-- DOCENTES ASIGNADOS -->
+    <div id="seccionDocentesAsignados" class="seccionRector" style="display:none;">
+        <div class="caja">
+            <h2>✅ Docentes Asignados</h2>
+            <div id="listaDocentesAsignados"></div>
+        </div>
+    </div>
+
+    <!-- HORARIOS -->
+<div id="gestHorarios" class="seccionRector" style="display:none;">
+    <div class="caja">
+        <h2>🕒 Gestión de Horarios del Rector</h2>
+        <p>Define los bloques horarios para cada día de la semana.</p>
+
+        <!-- Contenedor del horario -->
+        <div id="horarioRectorContainer">
+
+                <label><strong>Seleccione el paralelo:</strong></label>
+
+                <select id="selectorParalelo" onchange="cargarHorario()">
+                </select>
+
+                <br><br>
+
+                <div id="horarioForm" style="margin-top:20px;">
+                </div>
+
+                <button onclick="guardarHorario()">
+                    💾 Guardar Horario
+                </button>
+
+            </div>
+    </div>
+</div>
+
+
+    <!-- MODAL -->
+    <div id="modalAlumnos" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; justify-content:center; align-items:center;">
+
+        <div style="background:white; padding:30px; border-radius:20px; max-width:90%; max-height:80%; overflow:auto;">
+
+            <h2 id="modalTitulo"></h2>
+
+            <div id="listaAlumnosModal"></div>
+
+            <button onclick="cerrarModal('modalAlumnos')"
+                style="background:#e13b28; color:white; padding:10px 20px; border:none; border-radius:10px; cursor:pointer; margin-top:20px;">
+                ❌ Cerrar
+            </button>
+
+        </div>
+
+    </div>
+
+<!-- ====================================== -->
+<!-- CONTROL ACADÉMICO -->
+<!-- ====================================== -->
+
+<div
+    id="controlAcademico"
+    class="seccionRector"
+    style="display:none;">
+
+    <div class="caja">
+
+        <h2>
+            🔒 Control Académico
+        </h2>
+
+        <p style="margin-bottom:25px;color:#666;">
+            Administra el bloqueo de notas, conducta y las fechas de cierre del sistema.
+        </p>
+
+        <!-- BLOQUEOS -->
+
+        <h3>🔐 Bloqueos</h3>
+
+        <button
+            id="btnBloquearNotas"
+            class="btnGuardar"
+            data-estado="0"
+            onclick="alternarBloqueoNotas()">
+
+            🔓 Notas Desbloqueadas
+
+        </button>
+
+        <br><br>
+
+        <button
+            id="btnBloquearConducta"
+            class="btnGuardar"
+            data-estado="0"
+            onclick="alternarBloqueoConducta()">
+
+            🔓 Conducta Desbloqueada
+
+        </button>
+
+        <hr style="margin:35px 0;">
+
+        <!-- FECHAS -->
+
+        <h3>📅 Fechas de cierre</h3>
+
+        <label for="fechaNotas">
+
+            📘 Fecha de cierre de Notas
+
+        </label>
+
+        <br>
+
+        <input
+            type="datetime-local"
+            id="fechaNotas">
+
+        <br><br>
+
+        <label for="fechaConducta">
+
+            📝 Fecha de cierre de Conducta
+
+        </label>
+
+        <br>
+
+        <input
+            type="datetime-local"
+            id="fechaConducta">
+
+        <hr style="margin:35px 0;">
+
+        <!-- GUARDAR -->
+
+        <button
+            class="btnGuardar"
+            onclick="guardarControlAcademico()">
+
+            💾 Guardar Configuración
+
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- PANEL SOPORTE -->
+<!-- ========================= -->
+
+<div id="panelSoporte" style="display:none;">
+
+    <!-- HEADER -->
+    <div class="header">
+        <span>🛠 Centro de Soporte</span>
+        <span id="fechaHoraSoporte"></span>
+        <button class="btn-cerrar" onclick="cerrarSesionSoporte()">
+            🚪 Cerrar sesión
+        </button>
+    </div>
+
+    <!-- TARJETAS DEL PANEL SOPORTE -->
+    <div class="cards">
+        <div class="card" onclick="mostrarSoporte('tickets')">
+            📩 Tickets
+        </div>
+        <div class="card" onclick="mostrarSoporte('autorizaciones')">
+            🔄 Autorizaciones
+        </div>
+        <div class="card" onclick="mostrarSoporte('usuarios')">
+            👥 Usuarios
+        </div>
+        <div class="card" onclick="mostrarSoporte('gestionForos')">
+            💬 Gestión de Foros
+        </div>
+        <div class="card" onclick="mostrarSoporte('gestionQuizzes')">
+            🎮 Gestión de Quizziz
+        </div>
+        <div class="card" onclick="mostrarSoporte('configuracion')">
+            ⚙ Configuración
+        </div>
+    </div>
+
+    <!-- SECCIÓN TICKETS -->
+    <div id="tickets" class="seccionSoporte">
+        <div class="caja">
+            <h2>📩 Tickets de Soporte</h2>
+            <div id="listaTickets"></div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN AUTORIZACIONES -->
+    <div id="autorizaciones" class="seccionSoporte" style="display:none;">
+        <div class="caja">
+            <h2>🔄 Autorizaciones</h2>
+            <div id="listaAutorizaciones"></div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN USUARIOS -->
+    <div id="usuarios" class="seccionSoporte" style="display:none;">
+        <div class="caja">
+            <h2>👥 Gestión de Usuarios</h2>
+            <div class="buscadorUsuarios">
+                <input type="text" id="buscarUsuario" placeholder="🔍 Buscar por nombre..." onkeyup="buscarUsuarios()">
+            </div>
+            <br>
+            <div id="listaUsuarios"></div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN GESTIÓN DE FOROS -->
+    <div id="gestionForos" class="seccionSoporte" style="display:none;">
+        <div class="caja">
+            <h2>💬 Gestión de Foros</h2>
+            <p style="color:#666; margin-bottom:20px;">
+                Aquí puedes ocultar o mostrar foros. Los foros ocultos no serán visibles para los usuarios,
+                pero toda la información (preguntas y respuestas) se mantiene en la base de datos.
+            </p>
+            
+            <div style="margin-bottom:15px;">
+                <button onclick="cargarForosSoporte()" 
+                        style="background:#3498db; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">
+                    🔄 Actualizar lista
+                </button>
+            </div>
+            
+            <div id="listaForosSoporte" class="foros-container">
+                <!-- Los foros se cargarán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN GESTIÓN DE QUIZZIZ -->
+    <div id="gestionQuizzes" class="seccionSoporte" style="display:none;">
+        <div class="caja">
+            <h2>🎮 Gestión de Quizziz</h2>
+            <p style="color:#666; margin-bottom:20px;">
+                Aquí puedes ocultar o mostrar Quizziz. Los Quizziz ocultos no serán visibles para los estudiantes,
+                pero toda la información (preguntas y resultados) se mantiene en la base de datos.
+            </p>
+            
+            <div style="margin-bottom:15px;">
+                <button onclick="cargarQuizzesSoporte()" 
+                        style="background:#3498db; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">
+                    🔄 Actualizar lista
+                </button>
+            </div>
+            
+            <div id="listaQuizzesSoporte" class="quizzes-container">
+                <!-- Los quizzes se cargarán aquí -->
+            </div>
+        </div>
+    </div>
+
+ <!-- SECCIÓN CONFIGURACIÓN -->
+    <div id="configuracion" class="seccionSoporte" style="display:none;">
+
+    <div class="caja">
+
+        <h2>⚙ Configuración del Sistema</h2>
+
+        <p style="color:#666;margin-bottom:30px;">
+            Administra los respaldos del sistema y las acciones de mantenimiento.
+        </p>
+
+        <!-- RESPALDOS -->
+        <div class="cardConfiguracion">
+
+            <h3>📦 Respaldos del Sistema</h3>
+
+            <p>
+                Crea copias de seguridad y consulta los respaldos almacenados.
+            </p>
+
+            <div class="opcionesConfiguracion">
+
+                <button
+                    id="btnCrearRespaldo"
+                    class="btnConfig btnVerde">
+
+                    💾 Crear respaldo
+
+                </button>
+
+                <button
+                    id="btnVerRespaldos"
+                    class="btnConfig btnAzul">
+
+                    📂 Ver respaldos
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- SISTEMA -->
+        <div class="cardConfiguracion cardPeligro">
+
+            <h3>⚠ Administración del Sistema</h3>
+
+            <p>
+                Restablece el sistema para iniciar un nuevo período escolar.
+                Esta acción debe utilizarse únicamente cuando finalice el año lectivo.
+            </p>
+
+            <button
+                id="btnRestablecerSistema"
+                class="btnConfig btnRojo">
+
+                🔄 Reiniciar Sistema Escolar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<!-- ====================================== -->
+<!-- MODAL RESPALDOS -->
+<!-- ====================================== -->
+<div id="modalRespaldos" class="modal" style="display:none;">
+
+    <div class="modal-content" style="max-width:900px;">
+
+        <span
+            id="cerrarRespaldos"
+            class="close-modal">
+
+            &times;
+
+        </span>
+
+        <h2>📦 Respaldos del Sistema</h2>
+
+        <p style="color:#666;margin-bottom:25px;">
+
+            Aquí se muestran todos los respaldos almacenados del sistema.
+
+        </p>
+
+        <table
+            style="
+            width:100%;
+            border-collapse:collapse;
+            ">
+
+            <thead id="encabezadoRespaldos">
+
+                <tr style="background:#f5f5f5;">
+
+                    <th style="padding:12px;">Archivo</th>
+
+                    <th style="padding:12px;">Fecha</th>
+
+                    <th style="padding:12px;">Tamaño</th>
+
+                    <th style="padding:12px;">Acciones</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="listaRespaldos">
+
+                <tr>
+
+                    <td colspan="4"
+                        style="text-align:center;padding:25px;color:#777;">
+
+                        No existen respaldos.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+<!-- ====================================== -->
+<!-- MODAL VER ARCHIVO RESPALDO -->
+<!-- ====================================== -->
+
+<div
+    id="modalArchivoRespaldo"
+    class="modal"
+    style="display:none;">
+
+    <div
+        class="modal-content"
+        style="max-width:1000px;">
+
+        <span
+            id="cerrarArchivoRespaldo"
+            class="close-modal">
+
+            &times;
+
+        </span>
+
+        <h2 id="tituloArchivoRespaldo">
+
+            📄 Archivo del Respaldo
+
+        </h2>
+
+        <p
+            style="
+            color:#666;
+            margin-bottom:20px;
+            ">
+
+            Contenido completo del archivo seleccionado.
+
+        </p>
+
+        <pre
+            id="contenidoArchivoRespaldo"
+
+            style="
+            background:#1e1e1e;
+            color:#00ff90;
+            padding:20px;
+            border-radius:12px;
+            max-height:600px;
+            overflow:auto;
+            font-size:14px;
+            white-space:pre-wrap;
+            word-break:break-word;
+            border:1px solid #444;
+            ">
+
+        </pre>
+        <div
+            style="
+                margin-top:20px;
+                display:flex;
+                justify-content:flex-end;
+            ">
+
+            <button
+                id="btnDescargarArchivo"
+                class="btnConfig btnAzul">
+
+                ⬇ Descargar archivo
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ====================================== -->
+<!-- MODAL CONFIRMAR REINICIO -->
+<!-- ====================================== -->
+
+<div
+    id="modalReiniciarSistema"
+    class="modal"
+    style="display:none;">
+
+    <div
+        class="modal-content"
+        style="max-width:550px;">
+
+        <h2>⚠ Confirmar Reinicio</h2>
+
+        <p style="margin:20px 0;line-height:1.8;">
+
+            Se creará automáticamente un respaldo del sistema.
+
+            <br><br>
+
+            Después se eliminarán los datos del período escolar para iniciar uno nuevo.
+
+            <br><br>
+
+            <b>Esta acción no se puede deshacer.</b>
+
+        </p>
+
+        <div
+            style="
+                display:flex;
+                justify-content:flex-end;
+                gap:10px;
+            ">
+
+            <button
+                id="btnCancelarReinicio"
+                class="btnConfig">
+
+                Cancelar
+
+            </button>
+
+            <button
+                id="btnConfirmarReinicio"
+                class="btnConfig btnRojo">
+
+                🔄 Reiniciar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ========================= -->
+<!-- BOTÓN FLOTANTE SOPORTE -->
+<!-- ========================= -->
+
+<div id="botonFlotante" onclick="accionBotonFlotante()">
+
+    <img
+        id="iconoBotonFlotante"
+        src="img/soporte.png"
+        style="
+            width:38px;
+            height:38px;
+        ">
+</div>
+
+<!-- ========================= -->
+<!-- LOGIN SOPORTE -->
+<!-- ========================= -->
+
+<div id="loginSoporte" class="modalSoporte">
+
+    <div class="cajaSoporte">
+
+        <h2>🛠 Centro de Soporte</h2>
+
+        <input
+            id="usuarioSoporte"
+            type="text"
+            placeholder="Usuario">
+
+        <input
+            id="claveSoporte"
+            type="password"
+            placeholder="Contraseña">
+
+        <button onclick="loginSoporte()">
+            Entrar
+        </button>
+
+        <button
+            class="cerrarSoporte"
+            onclick="cerrarLoginSoporte()">
+
+            Cancelar
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- MODAL TICKET SOPORTE -->
+<!-- ========================= -->
+
+<div id="modalTicketSoporte" class="modalSoporte" style="display:none;">
+
+    <div class="cajaSoporte" style="max-width:500px;">
+
+        <h2>🛠 Solicitud de Soporte</h2>
+
+        <select id="categoriaTicket">
+
+            <option value="">Seleccione una categoría</option>
+
+            <option>Asistencia</option>
+
+            <option>Notas</option>
+
+            <option>Conducta</option>
+
+            <option>Quiz</option>
+
+            <option>Foro</option>
+
+            <option>Horario</option>
+
+            <option>Perfil</option>
+
+            <option>Sistema</option>
+
+            <option>Otros</option>
+
+        </select>
+
+        <input
+            id="asuntoTicket"
+            type="text"
+            placeholder="Asunto">
+
+        <textarea
+            id="descripcionTicket"
+            rows="6"
+            placeholder="Describe el problema..."></textarea>
+
+        <button onclick="enviarTicket()">
+
+            📩 Enviar Solicitud
+
+        </button>
+
+        <button
+            class="cerrarSoporte"
+            onclick="cerrarTicketSoporte()">
+
+            Cancelar
+
+        </button>
+
+    </div>
+
+</div>
+<!-- ========================= -->
+<!-- MODAL VER TICKET -->
+<!-- ========================= -->
+
+<div
+    id="modalVerTicket"
+    class="modalSoporte"
+    style="display:none;">
+
+    <div class="cajaTicket">
+
+    <h2>🎫 Ticket <span id="detalleNumero"></span></h2>
+
+    <div class="estadoTicket">
+
+        Estado:
+        <span id="detalleEstado" class="badgePendiente">
+            Pendiente
+        </span>
+
+    </div>
+
+    <div class="infoTicket">
+
+        <div class="infoCard">
+            <span>👤 Usuario</span>
+            <strong id="detalleUsuario"></strong>
+        </div>
+
+        <div class="infoCard">
+            <span>🎓 Rol</span>
+            <strong id="detalleRol"></strong>
+        </div>
+
+        <div class="infoCard">
+            <span>📂 Categoría</span>
+            <strong id="detalleCategoria"></strong>
+        </div>
+
+        <div class="infoCard">
+            <span>📝 Asunto</span>
+            <strong id="detalleAsunto"></strong>
+        </div>
+
+    </div>
+
+    <h3>📄 Descripción del problema</h3>
+
+    <div class="descripcionTicket">
+
+        <span id="detalleDescripcion"></span>
+
+    </div>
+
+    <hr>
+
+<h3 id="tituloRespuesta">
+    💬 Respuesta del soporte
+</h3>
+
+    <textarea
+        id="respuestaTicket"
+        rows="6"
+        placeholder="Escriba la respuesta para el usuario...">
+    </textarea>
+
+    <div class="accionesTicket">
+
+        <button id="btnResponderTicket" class="btnGuardar" onclick="guardarRespuestaTicket()">
+            ✅ Responder Ticket
+        </button>
+
+        <button
+            class="btnCancelar"
+            onclick="cerrarModalTicket()">
+
+            ❌ Cerrar
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+<!-- ========================= -->
+<!-- MODAL MIS TICKETS -->
+<!-- ========================= -->
+
+<div id="modalMisTickets" class="modalSoporte" style="display:none;">
+
+    <div class="cajaTicket">
+
+        <h2>🛠 Mis Solicitudes de Soporte</h2>
+
+        <div id="listaMisTickets"></div>
+
+        <br>
+
+        <button
+            class="btnCancelar"
+            onclick="cerrarMisTickets()">
+
+            Cerrar
+
+        </button>
+
+    </div>
+
+</div>
+<!-- ========================= -->
+<!-- MODAL VER MI TICKET -->
+<!-- ========================= -->
+
+<div id="modalVerMiTicket" class="modalSoporte" style="display:none;">
+
+    <div class="cajaTicket">
+
+        <h2>🎫 Ticket <span id="miDetalleNumero"></span></h2>
+
+        <div class="estadoTicket">
+
+            Estado:
+            <span id="miDetalleEstado" class="badgePendiente"></span>
+
+        </div>
+
+        <div class="infoTicket">
+
+            <div class="infoCard">
+
+                <span>📂 Categoría</span>
+
+                <strong id="miDetalleCategoria"></strong>
+
+            </div>
+
+            <div class="infoCard">
+
+                <span>📝 Asunto</span>
+
+                <strong id="miDetalleAsunto"></strong>
+
+            </div>
+
+        </div>
+
+        <h3>📄 Descripción</h3>
+
+        <div
+            class="descripcionTicket"
+            id="miDetalleDescripcion">
+        </div>
+
+        <hr>
+
+        <h3>💬 Respuesta del soporte</h3>
+
+        <div
+            class="descripcionTicket"
+            id="miRespuestaTicket">
+        </div>
+
+        <div class="accionesTicket">
+
+            <button
+                class="btnCancelar"
+                onclick="cerrarMiTicket()">
+
+                Cerrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ========================= -->
+<!-- MODAL ADMINISTRAR USUARIO -->
+<!-- ========================= -->
+
+<!-- ========================= -->
+<!-- MODAL ADMINISTRAR USUARIO -->
+<!-- ========================= -->
+
+<div id="modalUsuario" class="modalSoporte" style="display:none;">
+
+    <div class="cajaTicket">
+
+        <h2>👤 Administración de Usuario</h2>
+
+        <div class="infoTicket">
+
+            <div class="infoCard">
+                <span>Nombre</span>
+                <strong id="adminNombre"></strong>
+            </div>
+
+            <div class="infoCard">
+                <span>Rol</span>
+                <strong id="adminRol"></strong>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div id="accionesUsuario">
+            <!-- Los botones se cargarán aquí -->
+        </div>
+
+        <br>
+
+        <div class="accionesTicket">
+
+            <button
+                class="btnCancelar"
+                onclick="cerrarModalUsuario()"
+                style="background:#e74c3c; color:white; border:none; padding:12px; border-radius:8px; cursor:pointer; width:100%;">
+
+                ❌ Cerrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- MODAL PARA CAMBIAR CONTRASEÑA - ALUMNOS      -->
+<!-- ============================================ -->
+<div id="modalCambiarContrasenaAlumno" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    backdrop-filter: blur(5px);
+">
+    <div style="
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 450px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        animation: slideDown 0.3s ease;
+    ">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <div style="
+                font-size: 50px;
+                margin-bottom: 10px;
+            ">🔐</div>
+            <h2 style="
+                color: #e67e22;
+                margin: 0;
+                font-size: 24px;
+            ">Cambiar Contraseña Temporal</h2>
+            <p style="
+                color: #666;
+                font-size: 14px;
+                margin-top: 8px;
+            ">
+                ⚠️ Estás usando una contraseña temporal.<br>
+                <strong>Por seguridad, debes cambiarla.</strong>
+            </p>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #333;
+                font-size: 14px;
+            ">
+                🔑 Nueva Contraseña
+            </label>
+            <input 
+                type="password" 
+                id="nuevaContrasenaAlumno" 
+                placeholder="Ingresa tu nueva contraseña (mínimo 4 caracteres)"
+                style="
+                    width: 100%;
+                    padding: 12px 15px;
+                    border: 2px solid #ddd;
+                    border-radius: 10px;
+                    font-size: 16px;
+                    transition: border-color 0.3s;
+                    box-sizing: border-box;
+                "
+                onfocus="this.style.borderColor='#3498db'"
+                onblur="this.style.borderColor='#ddd'"
+            >
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label style="
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #333;
+                font-size: 14px;
+            ">
+                ✅ Confirmar Contraseña
+            </label>
+            <input 
+                type="password" 
+                id="confirmarContrasenaAlumno" 
+                placeholder="Confirma tu nueva contraseña"
+                style="
+                    width: 100%;
+                    padding: 12px 15px;
+                    border: 2px solid #ddd;
+                    border-radius: 10px;
+                    font-size: 16px;
+                    transition: border-color 0.3s;
+                    box-sizing: border-box;
+                "
+                onfocus="this.style.borderColor='#3498db'"
+                onblur="this.style.borderColor='#ddd'"
+                onkeypress="if(event.key==='Enter') cambiarContrasenaAlumno()"
+            >
+        </div>
+
+        <div style="
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        ">
+            <button 
+                id="btnCambiarContrasenaAlumno"
+                onclick="cambiarContrasenaAlumno()"
+                style="
+                    background: #27ae60;
+                    color: white;
+                    border: none;
+                    padding: 14px 20px;
+                    border-radius: 12px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    width: 100%;
+                "
+                onmouseover="this.style.background='#219a52'"
+                onmouseout="this.style.background='#27ae60'"
+            >
+                🔐 Cambiar Contraseña
+            </button>
+            
+            <button 
+                onclick="cerrarModalCambiarContrasenaAlumno()"
+                style="
+                    background: #e74c3c;
+                    color: white;
+                    border: none;
+                    padding: 12px 20px;
+                    border-radius: 12px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    width: 100%;
+                "
+                onmouseover="this.style.background='#c0392b'"
+                onmouseout="this.style.background='#e74c3c'"
+            >
+                ❌ Cerrar (No recomendado)
+            </button>
+        </div>
+
+        <p style="
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 15px;
+        ">
+            ⚠️ La contraseña debe tener al menos 4 caracteres<br>
+            y no puede ser "12345678"
+        </p>
+    </div>
+</div>
+
+
+<script defer src="java/funciones.js"></script>
+
+<script defer src="java/login.js"></script>
+<script defer src="java/registro.js"></script>
+
+<script defer src="java/alumno.js"></script>
+<script defer src="java/sopaLetras.js"></script>
+<script defer src="java/docente.js"></script>
+<script defer src="java/rector.js"></script>
+<script defer src="java/soporte.js"></script>
+
 </body>
 </html>
