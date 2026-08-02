@@ -320,3 +320,95 @@
       color: #4b5d78;
       font-size: 0.95rem;
     }
+/* =====================================
+   TABLAS DEL MANUAL
+=====================================*/
+
+.titulo-tabla{
+
+    margin-top:35px;
+    margin-bottom:10px;
+
+    color:#0b1d3a;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+.descripcion-tabla{
+
+    color:#475569;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+.tabla-contenedor{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    border:1px solid #e2e8f0;
+
+    margin-top:20px;
+
+}
+
+.tabla-manual{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.tabla-manual thead{
+
+    background:#1e3a8a;
+
+    color:white;
+
+}
+
+.tabla-manual th{
+
+    padding:16px;
+
+    text-align:left;
+
+    font-size:15px;
+
+}
+
+.tabla-manual td{
+
+    padding:15px;
+
+    border-bottom:1px solid #edf2f7;
+
+}
+
+.tabla-manual tbody tr:nth-child(even){
+
+    background:#f8fafc;
+
+}
+
+.tabla-manual tbody tr:hover{
+
+    background:#e8f1ff;
+
+    transition:.25s;
+
+}
+
+
